@@ -1296,8 +1296,8 @@ canvas:not(#ribbon-canvas),
   --global-font-size: 14px;
   --global-bg: #fff;
   --font-color: #4c4948;
-  --hr-border: #a4d8fa;
-  --hr-before-color: #80c8f8;
+  --hr-border: #d2ebfd;
+  --hr-before-color: #bfe4fb;
   --search-bg: #f6f8fa;
   --search-input-color: #4c4948;
   --search-result-title: #4c4948;
@@ -4237,7 +4237,7 @@ _:future,
   overflow-wrap: break-word;
 }
 #article-container a {
-  color: #49b1f5;
+  color: #99a9bf;
 }
 #article-container a:hover {
   text-decoration: underline;
@@ -4741,12 +4741,6 @@ _:future,
 #vcomment .vcards .vcard .vcontent.expand:after,
 #waline .vcards .vcard .vcontent.expand:after {
   z-index: 22;
-}
-#vcomment textarea {
-  background: url("/img/comment_bg.png") 100% 100% no-repeat;
-}
-#vcomment textarea:focus {
-  background-image: none;
 }
 .fireworks {
   position: fixed;
@@ -5735,9 +5729,6 @@ blockquote.pullquote.right {
   background: #2c2c2c !important;
 }
 [data-theme='dark'] #post-comment #comment-switch .switch-btn {
-  filter: brightness(0.8);
-}
-[data-theme='dark'] .note {
   filter: brightness(0.8);
 }
 [data-theme='dark'] .hide-button,
