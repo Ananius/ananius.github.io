@@ -1,0 +1,7797 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>接口 | Ananiu's BLOG</title><meta name="keywords" content="前端,黑马"><meta name="author" content="Ananiu"><meta name="copyright" content="Ananiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="03-项目接口黑马面面-接口文档baseURL: ‘http:&#x2F;&#x2F;hmmm-api.itheima.net&#39;项目仓库地址：  https:&#x2F;&#x2F;gitee.com&#x2F;zhoushugang&#x2F;hmmm-frontend-dev01-框架1.1用户修改密码 基本信息     Path： &#x2F;frame&#x2F;password    Method： POST    接口描述：oldPassword，newP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接口">
+<meta property="og:url" content="https://ananiu.xyz/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/index.html">
+<meta property="og:site_name" content="Ananiu&#39;s BLOG">
+<meta property="og:description" content="03-项目接口黑马面面-接口文档baseURL: ‘http:&#x2F;&#x2F;hmmm-api.itheima.net&#39;项目仓库地址：  https:&#x2F;&#x2F;gitee.com&#x2F;zhoushugang&#x2F;hmmm-frontend-dev01-框架1.1用户修改密码 基本信息     Path： &#x2F;frame&#x2F;password    Method： POST    接口描述：oldPassword，newP">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg">
+<meta property="article:published_time" content="2021-05-12T09:57:50.000Z">
+<meta property="article:modified_time" content="2021-05-16T02:34:52.731Z">
+<meta property="article:author" content="Ananiu">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="黑马">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ananius/blog/userpic.png"><link rel="canonical" href="https://ananiu.xyz/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":249,"languages":{"author":"作者: Ananiu","link":"链接: ","source":"来源: Ananiu's BLOG","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-16 10:34:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/ananius/blog/userpic.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/love/"><i class="fa-fw fas fa-heart   faa-tada animated"></i><span> LOVE</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-info"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ananiu's BLOG</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/love/"><i class="fa-fw fas fa-heart   faa-tada animated"></i><span> LOVE</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-info"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">接口</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-12T09:57:50.000Z" title="发表于 2021-05-12 17:57:50">2021-05-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-16T02:34:52.731Z" title="更新于 2021-05-16 10:34:52">2021-05-16</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="03-项目接口"><a href="#03-项目接口" class="headerlink" title="03-项目接口"></a>03-项目接口</h1><h1 id="黑马面面-接口文档"><a href="#黑马面面-接口文档" class="headerlink" title="黑马面面-接口文档"></a>黑马面面-接口文档</h1><h3 id="baseURL-‘http-hmmm-api-itheima-net-39"><a href="#baseURL-‘http-hmmm-api-itheima-net-39" class="headerlink" title="baseURL: ‘http://hmmm-api.itheima.net&#39;"></a>baseURL: ‘<a target="_blank" rel="noopener" href="http://hmmm-api.itheima.net&/#39;">http://hmmm-api.itheima.net&#39;</a></h3><h3 id="项目仓库地址：-https-gitee-com-zhoushugang-hmmm-frontend-dev"><a href="#项目仓库地址：-https-gitee-com-zhoushugang-hmmm-frontend-dev" class="headerlink" title="项目仓库地址：  https://gitee.com/zhoushugang/hmmm-frontend-dev"></a>项目仓库地址：  <a target="_blank" rel="noopener" href="https://gitee.com/zhoushugang/hmmm-frontend-dev">https://gitee.com/zhoushugang/hmmm-frontend-dev</a></h3><h3 id="01-框架"><a href="#01-框架" class="headerlink" title="01-框架"></a>01-框架</h3><h4 id="1-1用户修改密码"><a href="#1-1用户修改密码" class="headerlink" title="1.1用户修改密码"></a>1.1用户修改密码</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /frame/password</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong>oldPassword，newPassword 上传 MD5 码</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>oldPassword</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>旧密码</td>
+<td></td>
+</tr>
+<tr>
+<td>newPassword</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>新密码</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2用户注册"><a href="#1-2用户注册" class="headerlink" title="1.2用户注册"></a>1.2用户注册</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /frame/register</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong>password 上传 MD5 码</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>账号</td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>密码</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3用户注销"><a href="#1-3用户注销" class="headerlink" title="1.3用户注销"></a>1.3用户注销</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /frame/logout</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 用于用户注销，需要token认证</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4用户登录"><a href="#1-4用户登录" class="headerlink" title="1.4用户登录"></a>1.4用户登录</h4><p><a href=""> </a></p>
+<blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /frame/login</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> password 上传 MD5 码 SHA256</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>token</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>令牌</td>
+<td>枚举: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI</td>
+</tr>
+<tr>
+<td>sImlhdCI6MTUzNTY4NjY0NSwiZXhwIjoxNTM2ODk2MjQ1fQ.bGV4qjcZcNYDBJj</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ihIsSbSEQyPa5SkVcUYuA0WfgDds</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="1-5用户资料"><a href="#1-5用户资料" class="headerlink" title="1.5用户资料"></a>1.5用户资料</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /frame/profile</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> menus 菜单权限，需要从根节点开始 完整节点列表。</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>用户名</td>
+<td>format: cname</td>
+</tr>
+<tr>
+<td>group</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>部门</td>
+<td>枚举: 传智播客－研究院－项目开发组－前端</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>签名</td>
+<td>枚举: 海纳百川，有容乃大</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>头像</td>
+<td>枚举: <a target="_blank" rel="noopener" href="https://gw.alipayobjects.com/zos/rmsportal/">https://gw.alipayobjects.com/zos/rmsportal/</a></td>
+</tr>
+<tr>
+<td>BiazfanxmamNRoxxVxka.png</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>roles</td>
+<td>object</td>
+<td>必须</td>
+<td></td>
+<td>权限</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ menus</td>
+<td>string []</td>
+<td>必须</td>
+<td></td>
+<td>菜单</td>
+<td>最小数量: 3</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: string</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ points</td>
+<td>string []</td>
+<td>必须</td>
+<td></td>
+<td>权限点</td>
+<td>最小数量: 3</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: string</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="02-用户管理"><a href="#02-用户管理" class="headerlink" title="02-用户管理"></a>02-用户管理</h3><h4 id="2-1用户修改"><a href="#2-1用户修改" class="headerlink" title="2.1用户修改"></a>2.1用户修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>account</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>账号</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>姓名</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>联系电话</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>permission_group_id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>权限组id</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>头像</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>邮件</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否屏蔽</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2用户列表"><a href="#2-2用户列表" class="headerlink" title="2.2用户列表"></a>2.2用户列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>是</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>是</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>是</td>
+<td></td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>否</td>
+<td></td>
+<td>是否屏蔽 1 屏蔽 0 开启</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ account</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>账号</td>
+<td>format: word</td>
+</tr>
+<tr>
+<td>├─ fullName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>姓名</td>
+<td>format: cname</td>
+</tr>
+<tr>
+<td>├─ mobile</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>联系电话</td>
+<td>format: mobile</td>
+</tr>
+<tr>
+<td>├─ permission_group_id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>权限组id</td>
+<td>format: id</td>
+</tr>
+<tr>
+<td>├─ permission_group_title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>权限组名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ avatar</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>头像</td>
+<td>format: url</td>
+</tr>
+<tr>
+<td>├─ email</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>邮件</td>
+<td>format: email</td>
+</tr>
+<tr>
+<td>├─ last_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>最近登录时间</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ create_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>注册时间</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ disabled</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否屏蔽</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="2-3用户删除"><a href="#2-3用户删除" class="headerlink" title="2.3用户删除"></a>2.3用户删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4用户屏蔽、启用"><a href="#2-4用户屏蔽、启用" class="headerlink" title="2.4用户屏蔽、启用"></a>2.4用户屏蔽、启用</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/:id/disabled</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否屏蔽</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5用户添加"><a href="#2-5用户添加" class="headerlink" title="2.5用户添加"></a>2.5用户添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 默认密码  123456</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>account</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>账号</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>姓名</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>联系电话</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>permission_group_id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>权限组id</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>头像</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>邮件</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否屏蔽</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-6用户简单列表"><a href="#2-6用户简单列表" class="headerlink" title="2.6用户简单列表"></a>2.6用户简单列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/simple</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keyword</td>
+<td>是</td>
+<td></td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>否</td>
+<td></td>
+<td>是否屏蔽 1 屏蔽 0 开启</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ fullName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>姓名</td>
+<td>format: cname</td>
+</tr>
+</tbody></table>
+<h4 id="2-7用户详情"><a href="#2-7用户详情" class="headerlink" title="2.7用户详情"></a>2.7用户详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>用户i</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>账号</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>姓名</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>联系电话</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>permission_group_id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>权限组id</td>
+<td></td>
+</tr>
+<tr>
+<td>permission_group_title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>权限组</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>头像</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>邮件</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>last_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>最近登录时间</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>注册时间</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否屏蔽</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="2-8用户重置密码"><a href="#2-8用户重置密码" class="headerlink" title="2.8用户重置密码"></a>2.8用户重置密码</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /users/:id/password</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> password 上传 MD5 码 SHA256</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>password</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>密码</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="03-菜单管理"><a href="#03-菜单管理" class="headerlink" title="03-菜单管理"></a>03-菜单管理</h3><h4 id="3-1菜单修改"><a href="#3-1菜单修改" class="headerlink" title="3.1菜单修改"></a>3.1菜单修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /menus/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 菜单项不能挂在权限点上，权限点只能挂在菜单项上</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>项id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isPoint</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否权限点</td>
+<td></td>
+</tr>
+<tr>
+<td>pid</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>父 id</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>菜单代码 全局唯一</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>菜单标题</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2菜单列表"><a href="#3-2菜单列表" class="headerlink" title="3.2菜单列表"></a>3.2菜单列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /menus</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 权限点只能挂在菜单项上</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;id&quot;</span>: <span class="number">1101</span>,</span><br><span class="line">        <span class="string">&quot;pid&quot;</span>: <span class="number">1001</span>,</span><br><span class="line">        <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base&quot;</span>,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: <span class="string">&quot;数据管理&quot;</span>,</span><br><span class="line">        <span class="string">&quot;childs&quot;</span>: [                                         <span class="comment">// 菜单项</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;id&quot;</span>: <span class="number">1102</span>,</span><br><span class="line">                <span class="string">&quot;pid&quot;</span>: <span class="number">1101</span>,</span><br><span class="line">                <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base-users&quot;</span>,</span><br><span class="line">                <span class="string">&quot;title&quot;</span>: <span class="string">&quot;用户管理&quot;</span>,</span><br><span class="line">                <span class="string">&quot;points&quot;</span>: [                                 <span class="comment">// 权限点</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">&quot;id&quot;</span>: <span class="number">1106</span>,</span><br><span class="line">                        <span class="string">&quot;pid&quot;</span>: <span class="number">1102</span>,</span><br><span class="line">                        <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base-users-list&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;title&quot;</span>: <span class="string">&quot;用户管理-读取&quot;</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">&quot;id&quot;</span>: <span class="number">1107</span>,</span><br><span class="line">                        <span class="string">&quot;pid&quot;</span>: <span class="number">1102</span>,</span><br><span class="line">                        <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base-users-edit&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;title&quot;</span>: <span class="string">&quot;用户管理-修改&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;id&quot;</span>: <span class="number">1103</span>,</span><br><span class="line">                <span class="string">&quot;pid&quot;</span>: <span class="number">1101</span>,</span><br><span class="line">                <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base-menus&quot;</span>,</span><br><span class="line">                <span class="string">&quot;title&quot;</span>: <span class="string">&quot;菜单管理&quot;</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;id&quot;</span>: <span class="number">1104</span>,</span><br><span class="line">                <span class="string">&quot;pid&quot;</span>: <span class="number">1101</span>,</span><br><span class="line">                <span class="string">&quot;code&quot;</span>: <span class="string">&quot;base-permissions&quot;</span>,</span><br><span class="line">                <span class="string">&quot;title&quot;</span>: <span class="string">&quot;权限管理&quot;</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3菜单删除"><a href="#3-3菜单删除" class="headerlink" title="3.3菜单删除"></a>3.3菜单删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /menus/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 层级删除</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>项id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4菜单添加"><a href="#3-4菜单添加" class="headerlink" title="3.4菜单添加"></a>3.4菜单添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /menus</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 菜单项不能挂在权限点上，权限点只能挂在菜单项上</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isPoint</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否权限点</td>
+<td></td>
+</tr>
+<tr>
+<td>pid</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>父 id</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>菜单代码 全局唯一</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>菜单标题</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5菜单详情"><a href="#3-5菜单详情" class="headerlink" title="3.5菜单详情"></a>3.5菜单详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /menus/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>项id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pid</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>父节点id</td>
+<td></td>
+</tr>
+<tr>
+<td>isPoint</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否权限点</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>代码</td>
+<td>枚举: base-users</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>名称</td>
+<td>枚举: 用户管理</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最小值: 0</td>
+</tr>
+</tbody></table>
+<h3 id="04-权限组管理"><a href="#04-权限组管理" class="headerlink" title="04-权限组管理"></a>04-权限组管理</h3><h4 id="4-1权限组修改"><a href="#4-1权限组修改" class="headerlink" title="4.1权限组修改"></a>4.1权限组修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>integer []</td>
+<td>必须</td>
+<td></td>
+<td>权限ids [1101,1102,1103]</td>
+<td>item 类型: integer</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2权限组列表"><a href="#4-2权限组列表" class="headerlink" title="4.2权限组列表"></a>4.2权限组列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>是</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>是</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>是</td>
+<td></td>
+<td>关键字</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ create_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="4-3权限组删除"><a href="#4-3权限组删除" class="headerlink" title="4.3权限组删除"></a>4.3权限组删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4权限组添加"><a href="#4-4权限组添加" class="headerlink" title="4.4权限组添加"></a>4.4权限组添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>integer []</td>
+<td>必须</td>
+<td></td>
+<td>权限ids [1101,1102,1103]</td>
+<td>item 类型: integer</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-5权限组简单列表"><a href="#4-5权限组简单列表" class="headerlink" title="4.5权限组简单列表"></a>4.5权限组简单列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions/simple</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keyword</td>
+<td>是</td>
+<td></td>
+<td>关键字</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>名称</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="4-6权限组详情"><a href="#4-6权限组详情" class="headerlink" title="4.6权限组详情"></a>4.6权限组详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /permissions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>integer []</td>
+<td>必须</td>
+<td></td>
+<td>权限ids [1101,1102,1103]</td>
+<td>item 类型: integer</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>integer []</td>
+<td>必须</td>
+<td></td>
+<td>权限ids [1101,1102,1103]</td>
+<td>item 类型: integer</td>
+</tr>
+<tr>
+<td>create_date</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="05-企业管理"><a href="#05-企业管理" class="headerlink" title="05-企业管理"></a>05-企业管理</h3><h4 id="5-1企业管理修改"><a href="#5-1企业管理修改" class="headerlink" title="5.1企业管理修改"></a>5.1企业管理修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong> 无</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>number</td>
+<td>integer</td>
+<td>非必须</td>
+<td></td>
+<td>企业编号</td>
+<td></td>
+</tr>
+<tr>
+<td>isFamous</td>
+<td>boolean</td>
+<td>非必须</td>
+<td></td>
+<td>是否名企</td>
+<td></td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>企业简称</td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>所属公司</td>
+<td></td>
+</tr>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>省份</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>城市</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标签</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>备注</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2企业管理列表"><a href="#5-2企业管理列表" class="headerlink" title="5.2企业管理列表"></a>5.2企业管理列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>否</td>
+<td></td>
+<td>标签名称</td>
+</tr>
+<tr>
+<td>province</td>
+<td>否</td>
+<td></td>
+<td>企业所在地省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>否</td>
+<td></td>
+<td>企业所在城市</td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>否</td>
+<td></td>
+<td>企业简称</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td>1 启用 0 禁用</td>
+<td>状态</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ number</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>企业编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ isFamous</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否名企</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ shortName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>企业简称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ company</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>所属公司</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ province</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>省份</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ city</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>城市</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ remarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>备注</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creatorID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ state</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="5-3企业管理删除"><a href="#5-3企业管理删除" class="headerlink" title="5.3企业管理删除"></a>5.3企业管理删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-4企业管理添加"><a href="#5-4企业管理添加" class="headerlink" title="5.4企业管理添加"></a>5.4企业管理添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isFamous</td>
+<td>boolean</td>
+<td>非必须</td>
+<td></td>
+<td>是否名企</td>
+<td></td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>企业简称</td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>所属公司</td>
+<td></td>
+</tr>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>省份</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>城市</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标签</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>备注</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-5企业管理设置状态"><a href="#5-5企业管理设置状态" class="headerlink" title="5.5企业管理设置状态"></a>5.5企业管理设置状态</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys/:id/:state</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>state</td>
+<td></td>
+<td>状态 0 屏蔽 1 开启</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-6企业管理详情"><a href="#5-6企业管理详情" class="headerlink" title="5.6企业管理详情"></a>5.6企业管理详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /companys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>number</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>企业编号</td>
+<td></td>
+</tr>
+<tr>
+<td>isFamous</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否名企</td>
+<td></td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>企业简称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>所属公司</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>省份</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>城市</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>备注</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h3 id="06-题库管理"><a href="#06-题库管理" class="headerlink" title="06-题库管理"></a>06-题库管理</h3><h4 id="6-1审核意见"><a href="#6-1审核意见" class="headerlink" title="6.1审核意见"></a>6.1审核意见</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/:id/auditOpinions</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>问题ID</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>object []</td>
+<td>非必须</td>
+<td></td>
+<td></td>
+<td>item 类型: object</td>
+</tr>
+<tr>
+<td>├─ opinion</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>意见</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ chkTime</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>时间</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ checker</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>审核人</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="6-2出题记录"><a href="#6-2出题记录" class="headerlink" title="6.2出题记录"></a>6.2出题记录</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/:id/setRecords</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>问题ID</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>object []</td>
+<td>非必须</td>
+<td></td>
+<td></td>
+<td>item 类型: object</td>
+</tr>
+<tr>
+<td>├─ operation</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>操作</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ setTime</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>出题时间</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ setter</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>出题人</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="6-3基础题库列表"><a href="#6-3基础题库列表" class="headerlink" title="6.3基础题库列表"></a>6.3基础题库列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>否</td>
+<td></td>
+<td>学科</td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>否</td>
+<td></td>
+<td>难度</td>
+</tr>
+<tr>
+<td>questionType</td>
+<td>否</td>
+<td></td>
+<td>试题类型</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>否</td>
+<td></td>
+<td>标签名称</td>
+</tr>
+<tr>
+<td>province</td>
+<td>否</td>
+<td></td>
+<td>企业所在地省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>否</td>
+<td></td>
+<td>企业所在城市</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>否</td>
+<td></td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>否</td>
+<td></td>
+<td>题目备注</td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>否</td>
+<td></td>
+<td>企业简称</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>否</td>
+<td></td>
+<td>方向</td>
+</tr>
+<tr>
+<td>creatorID</td>
+<td>否</td>
+<td></td>
+<td>录入人</td>
+</tr>
+<tr>
+<td>catalogID</td>
+<td>否</td>
+<td></td>
+<td>目录</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ number</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>试题编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ subjectID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>学科</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ catalogID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>目录</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ enterpriseID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>企业</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ province</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>省份</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ city</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>城市</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ direction</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>方向</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ questionType</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题型</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ difficulty</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>难度</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ question</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题干</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ videoURL</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>解析视频</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://v.itheima.com/zycbrm2.mp4">http://v.itheima.com/zycbrm2.mp4</a>,</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://45.252.224.197/mp4files/213200000CEAE47B/v">http://45.252.224.197/mp4files/213200000CEAE47B/v</a>.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itheima.com/dc/xkdh/n12donghua.mp4,</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://v.itheima.com/dd/huodong/">http://v.itheima.com/dd/huodong/</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>s1jiaoshijiejiangshipian.mp4,</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://45.252.224.200/mp4files/116600000D3D51A5/v">http://45.252.224.200/mp4files/116600000D3D51A5/v</a>.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itheima.com/db/czr/javaxkft.mp4,</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://45.252.224.70/mp4files/221100000AFAA271/v">http://45.252.224.70/mp4files/221100000AFAA271/v</a>.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>itheima.com/dc/czxy/1114lkfzf.mp4,,,,,</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ answer</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>答案解析</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ remarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题目备注</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>试题标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入人</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="6-4基础题库删除"><a href="#6-4基础题库删除" class="headerlink" title="6.4基础题库删除"></a>6.4基础题库删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-5基础题库添加"><a href="#6-5基础题库添加" class="headerlink" title="6.5基础题库添加"></a>6.5基础题库添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>number</td>
+<td>integer</td>
+<td>非必须</td>
+<td></td>
+<td>试题编号</td>
+<td>后台自动生成（忽略）</td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>学科</td>
+<td></td>
+</tr>
+<tr>
+<td>catalogID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>目录</td>
+<td></td>
+</tr>
+<tr>
+<td>enterpriseID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>企业</td>
+<td></td>
+</tr>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>城市</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>地区</td>
+<td></td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>方向</td>
+<td></td>
+</tr>
+<tr>
+<td>questionType</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题型</td>
+<td></td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>难度</td>
+<td></td>
+</tr>
+<tr>
+<td>question</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题干</td>
+<td></td>
+</tr>
+<tr>
+<td>options</td>
+<td>object []</td>
+<td>非必须</td>
+<td></td>
+<td>选项</td>
+<td>item 类型: object</td>
+</tr>
+<tr>
+<td>├─ code</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>代码</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ img</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>图片URL</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ isRight</td>
+<td>boolean</td>
+<td>非必须</td>
+<td></td>
+<td>是否正确答案</td>
+<td></td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>解析视频</td>
+<td></td>
+</tr>
+<tr>
+<td>answer</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>答案解析</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题目备注</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>试题标签</td>
+<td></td>
+</tr>
+<tr>
+<td>isPerfect</td>
+<td>boolean</td>
+<td>非必须</td>
+<td></td>
+<td>是否精选题</td>
+<td>后台自动生成（忽略）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-5基础题库详情"><a href="#6-5基础题库详情" class="headerlink" title="6.5基础题库详情"></a>6.5基础题库详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isNext</td>
+<td>否</td>
+<td>isNext=true</td>
+<td>是否下一题</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>number</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>试题编号</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>catalogID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>目录</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>enterpriseID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>企业</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>省份</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>城市</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>方向</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>questionType</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题型</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>难度</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>question</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题干</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>option</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>选项</td>
+<td>最小数量: 3</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ code</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>代码</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ img</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>图片</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://www.itcast.cn/2018czgw/images/technology/icon1.png,http://www.itcast.cn/2018czgw/images/technology/icon2.png,http://www.itcast.cn/2018czgw/images/technology/icon3.png,http://www.itcast.cn/2018czgw/images/course/courserpic1.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic2.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic3.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic4.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic5.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic6.jpg">http://www.itcast.cn/2018czgw/images/technology/icon1.png,http://www.itcast.cn/2018czgw/images/technology/icon2.png,http://www.itcast.cn/2018czgw/images/technology/icon3.png,http://www.itcast.cn/2018czgw/images/course/courserpic1.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic2.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic3.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic4.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic5.jpg,http://www.itcast.cn/2018czgw/images/course/courserpic6.jpg</a>,,,,,,,,</td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ isRight</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>是否正确答案</td>
+<td></td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>解析视频</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4">http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4</a>,,,,,,,</td>
+</tr>
+<tr>
+<td>answerID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>答案解析</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题目备注</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>试题标签</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="6-6基础题库修改"><a href="#6-6基础题库修改" class="headerlink" title="6.6基础题库修改"></a>6.6基础题库修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>number</td>
+<td>integer</td>
+<td>非必须</td>
+<td></td>
+<td>试题编号</td>
+<td></td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>学科</td>
+<td></td>
+</tr>
+<tr>
+<td>catalogID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>目录</td>
+<td></td>
+</tr>
+<tr>
+<td>enterpriseID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>企业</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>城市</td>
+<td></td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>方向</td>
+<td></td>
+</tr>
+<tr>
+<td>questionType</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题型</td>
+<td></td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>难度</td>
+<td></td>
+</tr>
+<tr>
+<td>question</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题干</td>
+<td></td>
+</tr>
+<tr>
+<td>option</td>
+<td>object []</td>
+<td>非必须</td>
+<td></td>
+<td>选项</td>
+<td>item 类型: object</td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ code</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>代码</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ img</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>图片URL</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ isRight</td>
+<td>boolean</td>
+<td>非必须</td>
+<td></td>
+<td>是否正确答案</td>
+<td></td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>解析视频</td>
+<td></td>
+</tr>
+<tr>
+<td>answerID</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>答案解析</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>题目备注</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>试题标签</td>
+<td></td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>录入人</td>
+<td></td>
+</tr>
+<tr>
+<td>addDate</td>
+<td>integer</td>
+<td>非必须</td>
+<td></td>
+<td>录入时间</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-7批量导入题"><a href="#6-7批量导入题" class="headerlink" title="6.7批量导入题"></a>6.7批量导入题</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/batch</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科ID</td>
+<td></td>
+</tr>
+<tr>
+<td>fileID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>文件id</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-8精选题库上下架"><a href="#6-8精选题库上下架" class="headerlink" title="6.8精选题库上下架"></a>6.8精选题库上下架</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/choice/:id/:publishState</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>publishState</td>
+<td></td>
+<td>1 上架 0 下架</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-9精选题库列表"><a href="#6-9精选题库列表" class="headerlink" title="6.9精选题库列表"></a>6.9精选题库列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/choice</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>否</td>
+<td></td>
+<td>学科</td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>否</td>
+<td></td>
+<td>难度</td>
+</tr>
+<tr>
+<td>questionType</td>
+<td>否</td>
+<td></td>
+<td>试题类型</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>否</td>
+<td></td>
+<td>标签名称</td>
+</tr>
+<tr>
+<td>province</td>
+<td>否</td>
+<td></td>
+<td>企业所在地省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>否</td>
+<td></td>
+<td>企业所在城市</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>否</td>
+<td></td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>否</td>
+<td></td>
+<td>题目备注</td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>否</td>
+<td></td>
+<td>企业简称</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>否</td>
+<td></td>
+<td>方向</td>
+</tr>
+<tr>
+<td>creatorID</td>
+<td>否</td>
+<td></td>
+<td>录入人</td>
+</tr>
+<tr>
+<td>catalogID</td>
+<td>否</td>
+<td></td>
+<td>目录</td>
+</tr>
+<tr>
+<td>chkState</td>
+<td>否</td>
+<td>0 待审核 1 通过 2 拒绝</td>
+<td>审核状态</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ number</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>试题编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ subjectID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>学科</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ catalogID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>目录</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ enterpriseID</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>企业</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ province</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>省份</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ city</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>城市</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ direction</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>方向</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ questionType</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题型</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ difficulty</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>难度</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ question</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题干</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ videoURL</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>解析视频</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4">http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4</a>,,,,,,</td>
+</tr>
+<tr>
+<td>├─ answer</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>答案解析</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ remarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>题目备注</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>试题标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入人</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入时间</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ chkState</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>筛选状态 0 待审核 1 通过 2 拒绝</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ chkUser</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>审核人</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ chkDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>审核日期</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ chkRemarks</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>审核意见</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ publishState</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>1 上架 0 下架</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="6-10组题列表"><a href="#6-10组题列表" class="headerlink" title="6.10组题列表"></a>6.10组题列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/randoms/</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>否</td>
+<td></td>
+<td>关键字</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ addTime</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>组题时间</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ userName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>用户名</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ questionIDs</td>
+<td>string []</td>
+<td>必须</td>
+<td></td>
+<td>试题ID</td>
+<td>item 类型: string</td>
+</tr>
+<tr>
+<td>├─ progressOfAnswer</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>答题进度</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ accuracyRate</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>正确率</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ totalSeconds</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>答题总耗时秒</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ questionType</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>组题类型</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="6-11组题列表删除"><a href="#6-11组题列表删除" class="headerlink" title="6.11组题列表删除"></a>6.11组题列表删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/randoms/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-12加入或移出精选"><a href="#6-12加入或移出精选" class="headerlink" title="6.12加入或移出精选"></a>6.12加入或移出精选</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/choice/:id/:choiceState</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PATCH</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>choiceState</td>
+<td></td>
+<td>1 加入 0 移出</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-13试题审核"><a href="#6-13试题审核" class="headerlink" title="6.13试题审核"></a>6.13试题审核</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /questions/check/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>body</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>chkState</td>
+<td></td>
+<td>1 通过 2 不通过</td>
+</tr>
+<tr>
+<td>chkRemarks</td>
+<td></td>
+<td>原因</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="07-学科管理"><a href="#07-学科管理" class="headerlink" title="07-学科管理"></a>07-学科管理</h3><h4 id="7-1标签添加"><a href="#7-1标签添加" class="headerlink" title="7.1标签添加"></a>7.1标签添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科ID</td>
+<td></td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签名称</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-2学科修改"><a href="#7-2学科修改" class="headerlink" title="7.2学科修改"></a>7.2学科修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectName</td>
+<td>否</td>
+<td></td>
+<td>学科名称</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-3学科删除"><a href="#7-3学科删除" class="headerlink" title="7.3学科删除"></a>7.3学科删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-4学科添加"><a href="#7-4学科添加" class="headerlink" title="7.4学科添加"></a>7.4学科添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectName</td>
+<td>是</td>
+<td></td>
+<td>学科名称</td>
+</tr>
+<tr>
+<td>isFrontDisplay</td>
+<td>是</td>
+<td></td>
+<td>是否在页面显示 1是 0否</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-5学科简单列表"><a href="#7-5学科简单列表" class="headerlink" title="7.5学科简单列表"></a>7.5学科简单列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects/simple</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectName</td>
+<td>否</td>
+<td></td>
+<td>学科名称</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>object []</td>
+<td>非必须</td>
+<td></td>
+<td></td>
+<td>最小数量: 3</td>
+</tr>
+<tr>
+<td>元素是否都不同: false</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ value</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>数据ID</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ label</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td>枚举: MySQL,面向对象,JavaScript,HTML,CSS</td>
+</tr>
+</tbody></table>
+<h4 id="7-6学科详情"><a href="#7-6学科详情" class="headerlink" title="7.6学科详情"></a>7.6学科详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>addDate</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isFrontDisplay</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>前台是否显示</td>
+<td></td>
+</tr>
+<tr>
+<td>twoLevelDirectory</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>二级目录</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>题目数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="7-7标签修改"><a href="#7-7标签修改" class="headerlink" title="7.7标签修改"></a>7.7标签修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科ID</td>
+<td></td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签名称</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-8标签列表"><a href="#7-8标签列表" class="headerlink" title="7.8标签列表"></a>7.8标签列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>否</td>
+<td></td>
+<td>学科ID</td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>否</td>
+<td></td>
+<td>标签名称</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td></td>
+<td>状态 1 开启 0 屏蔽</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>oldPassword</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>旧密码</td>
+<td></td>
+</tr>
+<tr>
+<td>newPassword</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>新密码</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ tagName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>面试题数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ state</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="7-9标签删除"><a href="#7-9标签删除" class="headerlink" title="7.9标签删除"></a>7.9标签删除</h4><p><a href=""> </a></p>
+<blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-10学科列表"><a href="#7-10学科列表" class="headerlink" title="7.10学科列表"></a>7.10学科列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /subjects</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>subjectName</td>
+<td>否</td>
+<td></td>
+<td>学科名称</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ isFrontDisplay</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>前台是否显示</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ twoLevelDirectory</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>二级目录</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ tags</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>题目数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="7-11标签状态"><a href="#7-11标签状态" class="headerlink" title="7.11标签状态"></a>7.11标签状态</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags/:id/:state</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>state</td>
+<td></td>
+<td>状态 1 启用 0 屏蔽</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-12标签详情"><a href="#7-12标签详情" class="headerlink" title="7.12标签详情"></a>7.12标签详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /tags/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标签名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>addDate</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>面试题数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="7-13目录修改"><a href="#7-13目录修改" class="headerlink" title="7.13目录修改"></a>7.13目录修改</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科ID</td>
+<td></td>
+</tr>
+<tr>
+<td>directoryName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>目录名称</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-14目录列表"><a href="#7-14目录列表" class="headerlink" title="7.14目录列表"></a>7.14目录列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>subjectID</td>
+<td>否</td>
+<td></td>
+<td>学科ID</td>
+</tr>
+<tr>
+<td>directoryName</td>
+<td>否</td>
+<td></td>
+<td>目录名称</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td></td>
+<td>状态 1 开启 0 屏蔽</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ directoryName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>目录名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ addDate</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>面试题数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ state</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="7-15目录删除"><a href="#7-15目录删除" class="headerlink" title="7.15目录删除"></a>7.15目录删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>目录ID</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-16目录添加"><a href="#7-16目录添加" class="headerlink" title="7.16目录添加"></a>7.16目录添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subjectID</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科ID</td>
+<td></td>
+</tr>
+<tr>
+<td>directoryName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>目录名称</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-17目录状态"><a href="#7-17目录状态" class="headerlink" title="7.17目录状态"></a>7.17目录状态</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys/:id/:state</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>state</td>
+<td></td>
+<td>状态 1 启用 0 屏蔽</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-18目录详情"><a href="#7-18目录详情" class="headerlink" title="7.18目录详情"></a>7.18目录详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /directorys/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>subjectName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>学科名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>directoryName</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>目录名称</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>创建者</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>addDate</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>创建日期</td>
+<td>最大值: 1537169459</td>
+</tr>
+<tr>
+<td>最小值: 1537165459</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>totals</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>面试题数量</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h3 id="08-面试技巧"><a href="#08-面试技巧" class="headerlink" title="08-面试技巧"></a>08-面试技巧</h3><h4 id="8-1文章列表"><a href="#8-1文章列表" class="headerlink" title="8.1文章列表"></a>8.1文章列表</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Query</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>当前页数</td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>否</td>
+<td>10</td>
+<td>页尺寸</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>否</td>
+<td></td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td></td>
+<td>状态 1 开启 0 屏蔽</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counts</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td>最大值: 5000</td>
+</tr>
+<tr>
+<td>最小值: 100</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pagesize</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>页大小</td>
+<td>最大值: 50</td>
+</tr>
+<tr>
+<td>最小值: 5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pages</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>总页数</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>当前页码</td>
+<td>最大值: 100</td>
+</tr>
+<tr>
+<td>最小值: 1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>object []</td>
+<td>必须</td>
+<td></td>
+<td>列表</td>
+<td>最小数量: 10</td>
+</tr>
+<tr>
+<td>元素是否都不同: true</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最大数量: 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>item 类型: object</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ articleBody</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>文章正文</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>├─ videoURL</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>视频地址</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4">http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4</a></td>
+</tr>
+<tr>
+<td>├─ reads</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>阅读数</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>├─ state</td>
+<td>boolean</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td></td>
+</tr>
+<tr>
+<td>├─ creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入人</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+<h4 id="8-2文章删除"><a href="#8-2文章删除" class="headerlink" title="8.2文章删除"></a>8.2文章删除</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> DELETE</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-3文章添加"><a href="#8-3文章添加" class="headerlink" title="8.3文章添加"></a>8.3文章添加</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>articleBody</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章正文</td>
+<td></td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>视频地址</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-4文章状态"><a href="#8-4文章状态" class="headerlink" title="8.4文章状态"></a>8.4文章状态</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles/:id/:state</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> POST</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+<tr>
+<td>state</td>
+<td></td>
+<td>状态 1 开启 0 屏蔽</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-5文章编辑"><a href="#8-5文章编辑" class="headerlink" title="8.5文章编辑"></a>8.5文章编辑</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> PUT</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><strong>Body</strong><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>articleBody</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章正文</td>
+<td></td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>视频地址</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-6文章详情"><a href="#8-6文章详情" class="headerlink" title="8.6文章详情"></a>8.6文章详情</h4><blockquote>
+<p>基本信息</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p><strong>Path：</strong> /articles/:id</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>Method：</strong> GET</p>
+<ul>
+<li></li>
+</ul>
+<p><strong>接口描述：</strong></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<ul>
+<li><strong>路径参数</strong><table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td></td>
+<td>数据id</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>返回数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>编号</td>
+<td>最大值: 9010000</td>
+</tr>
+<tr>
+<td>最小值: 9000001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>标题</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>articleBody</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>文章正文</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>videoURL</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>视频地址</td>
+<td>枚举: <a target="_blank" rel="noopener" href="http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4">http://v.itheima.com/zycbrm2.mp4,http://45.252.224.197/mp4files/213200000CEAE47B/v.itheima.com/dc/xkdh/n12donghua.mp4,http://v.itheima.com/dd/huodong/s1jiaoshijiejiangshipian.mp4,http://45.252.224.200/mp4files/116600000D3D51A5/v.itheima.com/db/czr/javaxkft.mp4,http://45.252.224.70/mp4files/221100000AFAA271/v.itheima.com/dc/czxy/1114lkfzf.mp4</a></td>
+</tr>
+<tr>
+<td>reads</td>
+<td>integer</td>
+<td>必须</td>
+<td></td>
+<td>阅读数</td>
+<td>最大值: 500</td>
+</tr>
+<tr>
+<td>最小值: 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>状态</td>
+<td>format: ctitle</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>录入人</td>
+<td>format: ctitle</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Ananiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ananiu.xyz/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/">https://ananiu.xyz/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ananiu.xyz" target="_blank">Ananiu's BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/%E9%BB%91%E9%A9%AC/">黑马</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/05/12/Vue.js/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/12/10/ETr1LyXZuOn4YvW.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/05/flex笔记/" title="flex 布局"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/kLtdEV2fZTJCA3N.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-05</div><div class="title">flex 布局</div></div></a></div><div><a href="/2020/03/12/Ajax/" title="Ajax"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/OgzWZnrSN4CDEQ3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-12</div><div class="title">Ajax</div></div></a></div><div><a href="/2020/02/18/jQuery/" title="jQuery 总结"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/q5t8PKT61vU3pXo.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-18</div><div class="title">jQuery 总结</div></div></a></div><div><a href="/2021/05/05/js高级/" title="js高级"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/IQtwislgCEvzVMa.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-05</div><div class="title">js高级</div></div></a></div><div><a href="/2021/05/05/JavaScript/" title="JavaScript基础"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/kLtdEV2fZTJCA3N.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-05</div><div class="title">JavaScript基础</div></div></a></div><div><a href="/2021/05/12/Vue.js/" title="Vue"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/ETr1LyXZuOn4YvW.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-12</div><div class="title">Vue</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/ananius/blog/userpic.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Ananiu</div><div class="author-info__description">一个收藏回忆与分享技术的地方</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" href="/"><i class="fa fa-bookmark"></i><span>点我~~</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=5712974" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/ananius" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">03-项目接口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%91%E9%A9%AC%E9%9D%A2%E9%9D%A2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3"><span class="toc-number">2.</span> <span class="toc-text">黑马面面-接口文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#baseURL-%E2%80%98http-hmmm-api-itheima-net-39"><span class="toc-number">2.0.1.</span> <span class="toc-text">baseURL: ‘http:&#x2F;&#x2F;hmmm-api.itheima.net&#39;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%9A-https-gitee-com-zhoushugang-hmmm-frontend-dev"><span class="toc-number">2.0.2.</span> <span class="toc-text">项目仓库地址：  https:&#x2F;&#x2F;gitee.com&#x2F;zhoushugang&#x2F;hmmm-frontend-dev</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E6%A1%86%E6%9E%B6"><span class="toc-number">2.0.3.</span> <span class="toc-text">01-框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E7%94%A8%E6%88%B7%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-number">2.0.3.1.</span> <span class="toc-text">1.1用户修改密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C"><span class="toc-number">2.0.3.2.</span> <span class="toc-text">1.2用户注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E7%94%A8%E6%88%B7%E6%B3%A8%E9%94%80"><span class="toc-number">2.0.3.3.</span> <span class="toc-text">1.3用户注销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95"><span class="toc-number">2.0.3.4.</span> <span class="toc-text">1.4用户登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5%E7%94%A8%E6%88%B7%E8%B5%84%E6%96%99"><span class="toc-number">2.0.3.5.</span> <span class="toc-text">1.5用户资料</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.4.</span> <span class="toc-text">02-用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E7%94%A8%E6%88%B7%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.4.1.</span> <span class="toc-text">2.1用户修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.4.2.</span> <span class="toc-text">2.2用户列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3%E7%94%A8%E6%88%B7%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.4.3.</span> <span class="toc-text">2.3用户删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4%E7%94%A8%E6%88%B7%E5%B1%8F%E8%94%BD%E3%80%81%E5%90%AF%E7%94%A8"><span class="toc-number">2.0.4.4.</span> <span class="toc-text">2.4用户屏蔽、启用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.4.5.</span> <span class="toc-text">2.5用户添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6%E7%94%A8%E6%88%B7%E7%AE%80%E5%8D%95%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.4.6.</span> <span class="toc-text">2.6用户简单列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7%E7%94%A8%E6%88%B7%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.4.7.</span> <span class="toc-text">2.7用户详情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8%E7%94%A8%E6%88%B7%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-number">2.0.4.8.</span> <span class="toc-text">2.8用户重置密码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.5.</span> <span class="toc-text">03-菜单管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E8%8F%9C%E5%8D%95%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.5.1.</span> <span class="toc-text">3.1菜单修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2%E8%8F%9C%E5%8D%95%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.5.2.</span> <span class="toc-text">3.2菜单列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3%E8%8F%9C%E5%8D%95%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.5.3.</span> <span class="toc-text">3.3菜单删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.5.4.</span> <span class="toc-text">3.4菜单添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5%E8%8F%9C%E5%8D%95%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.5.5.</span> <span class="toc-text">3.5菜单详情</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04-%E6%9D%83%E9%99%90%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.6.</span> <span class="toc-text">04-权限组管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1%E6%9D%83%E9%99%90%E7%BB%84%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.6.1.</span> <span class="toc-text">4.1权限组修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2%E6%9D%83%E9%99%90%E7%BB%84%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.6.2.</span> <span class="toc-text">4.2权限组列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3%E6%9D%83%E9%99%90%E7%BB%84%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.6.3.</span> <span class="toc-text">4.3权限组删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4%E6%9D%83%E9%99%90%E7%BB%84%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.6.4.</span> <span class="toc-text">4.4权限组添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5%E6%9D%83%E9%99%90%E7%BB%84%E7%AE%80%E5%8D%95%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.6.5.</span> <span class="toc-text">4.5权限组简单列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6%E6%9D%83%E9%99%90%E7%BB%84%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.6.6.</span> <span class="toc-text">4.6权限组详情</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05-%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.7.</span> <span class="toc-text">05-企业管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">5.1企业管理修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.7.2.</span> <span class="toc-text">5.2企业管理列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.7.3.</span> <span class="toc-text">5.3企业管理删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.7.4.</span> <span class="toc-text">5.4企业管理添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E8%AE%BE%E7%BD%AE%E7%8A%B6%E6%80%81"><span class="toc-number">2.0.7.5.</span> <span class="toc-text">5.5企业管理设置状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.7.6.</span> <span class="toc-text">5.6企业管理详情</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06-%E9%A2%98%E5%BA%93%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.8.</span> <span class="toc-text">06-题库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1%E5%AE%A1%E6%A0%B8%E6%84%8F%E8%A7%81"><span class="toc-number">2.0.8.1.</span> <span class="toc-text">6.1审核意见</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-number">2.0.8.2.</span> <span class="toc-text">6.2出题记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3%E5%9F%BA%E7%A1%80%E9%A2%98%E5%BA%93%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.8.3.</span> <span class="toc-text">6.3基础题库列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4%E5%9F%BA%E7%A1%80%E9%A2%98%E5%BA%93%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.8.4.</span> <span class="toc-text">6.4基础题库删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-5%E5%9F%BA%E7%A1%80%E9%A2%98%E5%BA%93%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.8.5.</span> <span class="toc-text">6.5基础题库添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-5%E5%9F%BA%E7%A1%80%E9%A2%98%E5%BA%93%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.8.6.</span> <span class="toc-text">6.5基础题库详情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-6%E5%9F%BA%E7%A1%80%E9%A2%98%E5%BA%93%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.8.7.</span> <span class="toc-text">6.6基础题库修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-7%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5%E9%A2%98"><span class="toc-number">2.0.8.8.</span> <span class="toc-text">6.7批量导入题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-8%E7%B2%BE%E9%80%89%E9%A2%98%E5%BA%93%E4%B8%8A%E4%B8%8B%E6%9E%B6"><span class="toc-number">2.0.8.9.</span> <span class="toc-text">6.8精选题库上下架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-9%E7%B2%BE%E9%80%89%E9%A2%98%E5%BA%93%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.8.10.</span> <span class="toc-text">6.9精选题库列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-10%E7%BB%84%E9%A2%98%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.8.11.</span> <span class="toc-text">6.10组题列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-11%E7%BB%84%E9%A2%98%E5%88%97%E8%A1%A8%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.8.12.</span> <span class="toc-text">6.11组题列表删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-12%E5%8A%A0%E5%85%A5%E6%88%96%E7%A7%BB%E5%87%BA%E7%B2%BE%E9%80%89"><span class="toc-number">2.0.8.13.</span> <span class="toc-text">6.12加入或移出精选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-13%E8%AF%95%E9%A2%98%E5%AE%A1%E6%A0%B8"><span class="toc-number">2.0.8.14.</span> <span class="toc-text">6.13试题审核</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07-%E5%AD%A6%E7%A7%91%E7%AE%A1%E7%90%86"><span class="toc-number">2.0.9.</span> <span class="toc-text">07-学科管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1%E6%A0%87%E7%AD%BE%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.9.1.</span> <span class="toc-text">7.1标签添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2%E5%AD%A6%E7%A7%91%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.9.2.</span> <span class="toc-text">7.2学科修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3%E5%AD%A6%E7%A7%91%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.9.3.</span> <span class="toc-text">7.3学科删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4%E5%AD%A6%E7%A7%91%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.9.4.</span> <span class="toc-text">7.4学科添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5%E5%AD%A6%E7%A7%91%E7%AE%80%E5%8D%95%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.9.5.</span> <span class="toc-text">7.5学科简单列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-6%E5%AD%A6%E7%A7%91%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.9.6.</span> <span class="toc-text">7.6学科详情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-7%E6%A0%87%E7%AD%BE%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.9.7.</span> <span class="toc-text">7.7标签修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-8%E6%A0%87%E7%AD%BE%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.9.8.</span> <span class="toc-text">7.8标签列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-9%E6%A0%87%E7%AD%BE%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.9.9.</span> <span class="toc-text">7.9标签删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-10%E5%AD%A6%E7%A7%91%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.9.10.</span> <span class="toc-text">7.10学科列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-11%E6%A0%87%E7%AD%BE%E7%8A%B6%E6%80%81"><span class="toc-number">2.0.9.11.</span> <span class="toc-text">7.11标签状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-12%E6%A0%87%E7%AD%BE%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.9.12.</span> <span class="toc-text">7.12标签详情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-13%E7%9B%AE%E5%BD%95%E4%BF%AE%E6%94%B9"><span class="toc-number">2.0.9.13.</span> <span class="toc-text">7.13目录修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-14%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.9.14.</span> <span class="toc-text">7.14目录列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-15%E7%9B%AE%E5%BD%95%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.9.15.</span> <span class="toc-text">7.15目录删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-16%E7%9B%AE%E5%BD%95%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.9.16.</span> <span class="toc-text">7.16目录添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-17%E7%9B%AE%E5%BD%95%E7%8A%B6%E6%80%81"><span class="toc-number">2.0.9.17.</span> <span class="toc-text">7.17目录状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-18%E7%9B%AE%E5%BD%95%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.9.18.</span> <span class="toc-text">7.18目录详情</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08-%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="toc-number">2.0.10.</span> <span class="toc-text">08-面试技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8"><span class="toc-number">2.0.10.1.</span> <span class="toc-text">8.1文章列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2%E6%96%87%E7%AB%A0%E5%88%A0%E9%99%A4"><span class="toc-number">2.0.10.2.</span> <span class="toc-text">8.2文章删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.0.10.3.</span> <span class="toc-text">8.3文章添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-4%E6%96%87%E7%AB%A0%E7%8A%B6%E6%80%81"><span class="toc-number">2.0.10.4.</span> <span class="toc-text">8.4文章状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5%E6%96%87%E7%AB%A0%E7%BC%96%E8%BE%91"><span class="toc-number">2.0.10.5.</span> <span class="toc-text">8.5文章编辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-6%E6%96%87%E7%AB%A0%E8%AF%A6%E6%83%85"><span class="toc-number">2.0.10.6.</span> <span class="toc-text">8.6文章详情</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/" title="接口"><img data-lazy-src="https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="接口"/></a><div class="content"><a class="title" href="/2021/05/12/03-%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%8F%A3-%E5%8F%82%E8%80%83%E7%BA%BF%E4%B8%8A/" title="接口">接口</a><time datetime="2021-05-12T09:57:50.000Z" title="发表于 2021-05-12 17:57:50">2021-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/12/Vue.js/" title="Vue"><img data-lazy-src="https://i.loli.net/2020/12/10/ETr1LyXZuOn4YvW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"/></a><div class="content"><a class="title" href="/2021/05/12/Vue.js/" title="Vue">Vue</a><time datetime="2021-05-12T09:57:50.000Z" title="发表于 2021-05-12 17:57:50">2021-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/05/flex%E7%AC%94%E8%AE%B0/" title="flex 布局"><img data-lazy-src="https://i.loli.net/2020/12/10/kLtdEV2fZTJCA3N.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flex 布局"/></a><div class="content"><a class="title" href="/2021/05/05/flex%E7%AC%94%E8%AE%B0/" title="flex 布局">flex 布局</a><time datetime="2021-05-05T04:57:50.000Z" title="发表于 2021-05-05 12:57:50">2021-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/05/git/" title="gti命令 git语法"><img data-lazy-src="https://i.loli.net/2020/12/10/Og5xtPEIwQW89Rj.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="gti命令 git语法"/></a><div class="content"><a class="title" href="/2021/05/05/git/" title="gti命令 git语法">gti命令 git语法</a><time datetime="2021-05-05T04:57:50.000Z" title="发表于 2021-05-05 12:57:50">2021-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/05/js%E9%AB%98%E7%BA%A7/" title="js高级"><img data-lazy-src="https://i.loli.net/2020/12/10/IQtwislgCEvzVMa.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js高级"/></a><div class="content"><a class="title" href="/2021/05/05/js%E9%AB%98%E7%BA%A7/" title="js高级">js高级</a><time datetime="2021-05-05T04:57:50.000Z" title="发表于 2021-05-05 12:57:50">2021-05-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/12/10/MK9Oq1t3IAb2Lls.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Ananiu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '8WBd1VRx82QjqeWssBiWlddO-MdYXbMMI',
+      appKey: 'PncI8zh8LauUoICWEw5zuOIF',
+      placeholder: '建议使用QQ邮箱，评论头像采用QQ头像',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false,
+      master:'79b0957100e2dd6a073c9edbf622236e',
+      friends:'c14ab41f23416f072a790ffbd444c224,f73c98404a448c27c9ffa811e0f3c276,dfb91aa068cc95505677a4f0c7d8dde1',
+  
+      //- emojiMaps: {
+      //-       "001":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/001.png",
+      //-       "002":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/002.png",
+      //-       "003":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/003.png",
+      //-       "004":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/004.png",
+      //-       "005":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/005.png",
+      //-       "006":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/006.png",
+      //-       "007":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/007.png",
+      //-       "008":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/008.png",
+      //-       "009":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/009.png",
+      //-       "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/010.png",
+      //-       "011":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/011.png",
+      //-       "012":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/012.png",
+      //-       "013":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/013.png",
+      //-       "014":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/014.png",
+      //-       "015":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/015.png",
+      //-       "016":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/016.png",
+      //-       "017":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/017.png",
+      //-       "018":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/018.png",
+      //-       "019":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/019.png",
+      //-       "020":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/020.png",
+      //-       "021":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/021.png",
+      //-       "022":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/022.png",
+      //-       "023":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/023.png",
+      //-       "024":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/024.png",
+      //-       "025":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/025.png",
+      //-       "026":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/026.png",
+      //-       "027":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/027.png",
+      //-       "028":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/028.png",
+      //-       "029":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/029.png",
+      //-       "030":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/030.png",
+      //-       "031":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/031.png",
+      //-       "032":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/032.png",
+      //-       "033":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/033.png",
+      //-       "034":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/034.png",
+      //-       "035":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/035.png",
+      //-       "036":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/036.png",
+      //-       "037":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/037.png",
+      //-       "038":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/038.png",
+      //-       "039":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/039.png",
+      //-       "040":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/040.png",
+      //-       "041":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/041.png",
+      //-       "042":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/042.png",
+      //-       "043":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/043.png",
+      //-       "044":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/044.png",
+      //-       "045":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/045.png",
+      //-       "046":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/046.png",
+      //-       "047":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/047.png",
+      //-       "048":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/048.png",
+      //-       "049":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/049.png",
+      //-       "050":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/050.png",
+      //-       "051":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/051.png",
+      //-       "052":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/052.png",
+      //-       "053":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/053.png",
+      //-       "054":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/054.png",
+      //-       "055":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/055.png",
+      //-       "056":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/056.png",
+      //-       "057":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/057.png",
+      //-       "058":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/058.png",
+      //-       "059":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/059.png",
+      //-       "060":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/060.png",
+      //-       "061":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/061.png",
+      //-       "062":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/062.png",
+      //-       "063":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/063.png",
+      //-       "064":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/064.png",
+      //-       "065":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/065.png",
+      //-       "066":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/066.png",
+      //-       "067":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/067.png",
+      //-       "068":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/068.png",
+      //-       "069":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/069.png",
+      //-       "070":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/070.png",
+      //-       "071":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/071.png",
+      //-       "072":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/072.png",
+      //-       "073":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/073.png",
+      //-       "074":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/074.png",
+      //-       "075":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/075.png",
+      //-       "076":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/076.png",
+      //-       "077":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/077.png",
+      //-       "078":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/078.png",
+      //-       "079":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/079.png",
+      //-       "080":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/080.png",
+      //-       "081":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/081.png",
+      //-       "082":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/082.png",
+      //-       "083":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/083.png",
+      //-       "084":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/084.png",
+      //-       "085":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/085.png",
+      //-       "086":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/086.png",
+      //-       "087":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/087.png",
+      //-       "088":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/088.png",
+      //-       "089":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/089.png",
+      //-       "090":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/090.png",
+      //-       "091":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/091.png",
+      //-       "092":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/092.png",
+      //-       "093":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/093.png",
+      //-       "094":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/094.png",
+      //-       "095":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/095.png",
+      //-       "096":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/096.png",
+      //-       "097":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/097.png",
+      //-       "098":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/098.png",
+      //-       "099":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/099.png",
+      //-       "100":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/100.png",
+      //-       "101":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/101.png",
+      //-       "102":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/102.png",
+      //-       "103":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/103.png",
+      //-       "104":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/104.png",
+      //-       "105":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/105.png",
+      //-       "106":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/105.gif",
+      //-       "1":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/1.gif"
+      //-  },
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/xiaopengand/blogCdn@latest/fishes.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div></body></html>
