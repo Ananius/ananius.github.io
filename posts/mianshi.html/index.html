@@ -1,1784 +1,706 @@
-<!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>面试汇总 | Ananiu's BLOG</title>
-    <meta name="keywords" content="前端,面试" />
-    <meta name="author" content="Ananiu" />
-    <meta name="copyright" content="Ananiu" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta
-      name="description"
-      content="面试总结1、h5、c3的新特性  H5新增 语义化标签(header, nav, article, section, aside, footer),音频视频标签(audio, video) 新增了表单类型(number, tel, serach等)–新增的表单属性(placeholder, multiple, autofocus)   C3新增 属性选择器和结构伪类选择器，伪元素选择器 盒模型，"
-    />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="面试汇总" />
-    <meta
-      property="og:url"
-      content="https://ananiu.xyz/posts/mianshi.html/index.html"
-    />
-    <meta property="og:site_name" content="Ananiu&#39;s BLOG" />
-    <meta
-      property="og:description"
-      content="面试总结1、h5、c3的新特性  H5新增 语义化标签(header, nav, article, section, aside, footer),音频视频标签(audio, video) 新增了表单类型(number, tel, serach等)–新增的表单属性(placeholder, multiple, autofocus)   C3新增 属性选择器和结构伪类选择器，伪元素选择器 盒模型，"
-    />
-    <meta property="og:locale" content="zh_CN" />
-    <meta
-      property="og:image"
-      content="https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg"
-    />
-    <meta
-      property="article:published_time"
-      content="2021-05-23T16:00:00.000Z"
-    />
-    <meta property="article:modified_time" content="2021-05-24T03:18:43.625Z" />
-    <meta property="article:author" content="Ananiu" />
-    <meta property="article:tag" content="前端" />
-    <meta property="article:tag" content="面试" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      name="twitter:image"
-      content="https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://avatars.githubusercontent.com/u/80749242?v=4"
-    />
-    <link rel="canonical" href="https://ananiu.xyz/posts/mianshi.html/" />
-    <link rel="preconnect" href="//cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <script>
-      const GLOBAL_CONFIG = {
-        root: "/",
-        algolia: undefined,
-        localSearch: {
-          path: "search.xml",
-          languages: { hits_empty: "找不到您查询的内容：${query}" },
-        },
-        translate: {
-          defaultEncoding: 2,
-          translateDelay: 0,
-          msgToTraditionalChinese: "繁",
-          msgToSimplifiedChinese: "簡",
-        },
-        noticeOutdate: undefined,
-        highlight: {
-          plugin: "highlighjs",
-          highlightCopy: true,
-          highlightLang: true,
-          highlightHeightLimit: false,
-        },
-        copy: {
-          success: "复制成功",
-          error: "复制错误",
-          noSupport: "浏览器不支持",
-        },
-        relativeDate: {
-          homepage: false,
-          post: false,
-        },
-        runtime: "",
-        date_suffix: {
-          just: "刚刚",
-          min: "分钟前",
-          hour: "小时前",
-          day: "天前",
-          month: "个月前",
-        },
-        copyright: {
-          limitCount: 249,
-          languages: {
-            author: "作者: Ananiu",
-            link: "链接: ",
-            source: "来源: Ananiu's BLOG",
-            info: "著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。",
-          },
-        },
-        lightbox: "fancybox",
-        Snackbar: {
-          chs_to_cht: "你已切换为繁体",
-          cht_to_chs: "你已切换为简体",
-          day_to_night: "你已切换为深色模式",
-          night_to_day: "你已切换为浅色模式",
-          bgLight: "#49b1f5",
-          bgDark: "#121212",
-          position: "bottom-left",
-        },
-        source: {
-          jQuery:
-            "https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js",
-          justifiedGallery: {
-            js: "https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js",
-            css: "https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css",
-          },
-          fancybox: {
-            js: "https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js",
-            css: "https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css",
-          },
-        },
-        isPhotoFigcaption: false,
-        islazyload: true,
-        isanchor: false,
-      };
-    </script>
-    <script id="config-diff">
-      var GLOBAL_CONFIG_SITE = {
-        isPost: true,
-        isHome: false,
-        isHighlightShrink: false,
-        isToc: false,
-        postUpdate: "2021-05-24 11:18:43",
-      };
-    </script>
-    <noscript
-      ><style type="text/css">
-        #nav {
-          opacity: 1;
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面试汇总 | Ananiu's BLOG</title><meta name="keywords" content="前端,面试"><meta name="author" content="Ananiu"><meta name="copyright" content="Ananiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="面试总结1、h5、c3的新特性  H5新增 语义化标签(header, nav, article, section, aside, footer),音频视频标签(audio, video) 新增了表单类型(number, tel, serach等)–新增的表单属性(placeholder, multiple, autofocus)   C3新增 属性选择器和结构伪类选择器，伪元素选择器 盒模型，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试汇总">
+<meta property="og:url" content="https://ananiu.xyz/posts/mianshi.html/index.html">
+<meta property="og:site_name" content="Ananiu&#39;s BLOG">
+<meta property="og:description" content="面试总结1、h5、c3的新特性  H5新增 语义化标签(header, nav, article, section, aside, footer),音频视频标签(audio, video) 新增了表单类型(number, tel, serach等)–新增的表单属性(placeholder, multiple, autofocus)   C3新增 属性选择器和结构伪类选择器，伪元素选择器 盒模型，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg">
+<meta property="article:published_time" content="2021-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-24T03:18:43.625Z">
+<meta property="article:author" content="Ananiu">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg"><link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/80749242?v=4"><link rel="canonical" href="https://ananiu.xyz/posts/mianshi.html/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":249,"languages":{"author":"作者: Ananiu","link":"链接: ","source":"来源: Ananiu's BLOG","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-24 11:18:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
-        .justified-gallery img {
-          opacity: 1;
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
         }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-        #recent-posts time,
-        #post-meta time {
-          display: inline !important;
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
         }
-      </style></noscript
-    >
-    <script>
-      ((win) => {
-        win.saveToLocal = {
-          set: function setWithExpiry(key, value, ttl) {
-            if (ttl === 0) return;
-            const now = new Date();
-            const expiryDay = ttl * 86400000;
-            const item = {
-              value: value,
-              expiry: now.getTime() + expiryDay,
-            };
-            localStorage.setItem(key, JSON.stringify(item));
-          },
-
-          get: function getWithExpiry(key) {
-            const itemStr = localStorage.getItem(key);
-
-            if (!itemStr) {
-              return undefined;
-            }
-            const item = JSON.parse(itemStr);
-            const now = new Date();
-
-            if (now.getTime() > item.expiry) {
-              localStorage.removeItem(key);
-              return undefined;
-            }
-            return item.value;
-          },
-        };
-
-        win.getScript = (url) =>
-          new Promise((resolve, reject) => {
-            const script = document.createElement("script");
-            script.src = url;
-            script.async = true;
-            script.onerror = reject;
-            script.onload = script.onreadystatechange = function () {
-              const loadState = this.readyState;
-              if (
-                loadState &&
-                loadState !== "loaded" &&
-                loadState !== "complete"
-              )
-                return;
-              script.onload = script.onreadystatechange = null;
-              resolve();
-            };
-            document.head.appendChild(script);
-          });
-
-        win.activateDarkMode = function () {
-          document.documentElement.setAttribute("data-theme", "dark");
-          if (document.querySelector('meta[name="theme-color"]') !== null) {
-            document
-              .querySelector('meta[name="theme-color"]')
-              .setAttribute("content", "#0d0d0d");
-          }
-        };
-        win.activateLightMode = function () {
-          document.documentElement.setAttribute("data-theme", "light");
-          if (document.querySelector('meta[name="theme-color"]') !== null) {
-            document
-              .querySelector('meta[name="theme-color"]')
-              .setAttribute("content", "#ffffff");
-          }
-        };
-        const t = saveToLocal.get("theme");
-
-        const isDarkMode = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        const isLightMode = window.matchMedia(
-          "(prefers-color-scheme: light)"
-        ).matches;
-        const isNotSpecified = window.matchMedia(
-          "(prefers-color-scheme: no-preference)"
-        ).matches;
-        const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
-
-        if (t === undefined) {
-          if (isLightMode) activateLightMode();
-          else if (isDarkMode) activateDarkMode();
-          else if (isNotSpecified || hasNoSupport) {
-            const now = new Date();
-            const hour = now.getHours();
-            const isNight = hour <= 6 || hour >= 18;
-            isNight ? activateDarkMode() : activateLightMode();
-          }
-          window
-            .matchMedia("(prefers-color-scheme: dark)")
-            .addListener(function (e) {
-              if (saveToLocal.get("theme") === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode();
-              }
-            });
-        } else if (t === "light") activateLightMode();
-        else activateDarkMode();
-
-        const asideStatus = saveToLocal.get("aside-status");
-        if (asideStatus !== undefined) {
-          if (asideStatus === "hide") {
-            document.documentElement.classList.add("hide-aside");
-          } else {
-            document.documentElement.classList.remove("hide-aside");
-          }
-        }
-
-        const fontSizeVal = saveToLocal.get("global-font-size");
-        if (fontSizeVal !== undefined) {
-          document.documentElement.style.setProperty(
-            "--global-font-size",
-            fontSizeVal + "px"
-          );
-        }
-      })(window);
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"
-    />
-    <!-- hexo injector head_end start -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"
-    />
-    <!-- hexo injector head_end end -->
-    <meta name="generator" content="Hexo 5.4.0" />
-  </head>
-  <body>
-    <div id="loading-box">
-      <div class="loading-left-bg"></div>
-      <div class="loading-right-bg"></div>
-      <div class="spinner-box">
-        <div class="configure-border-1"><div class="configure-core"></div></div>
-        <div class="configure-border-2"><div class="configure-core"></div></div>
-        <div class="loading-word">加载中...</div>
-      </div>
-    </div>
-    <div id="web_bg"></div>
-    <div id="sidebar">
-      <div id="menu-mask"></div>
-      <div id="sidebar-menus">
-        <div class="author-avatar">
-          <img
-            class="avatar-img"
-            data-lazy-src="https://avatars.githubusercontent.com/u/80749242?v=4"
-            onerror="onerror=null;src='/img/friend_404.gif'"
-            alt="avatar"
-          />
-        </div>
-        <div class="site-data">
-          <div class="data-item is-center">
-            <div class="data-item-link">
-              <a href="/archives/"
-                ><div class="headline">文章</div>
-                <div class="length-num">11</div></a
-              >
-            </div>
-          </div>
-          <div class="data-item is-center">
-            <div class="data-item-link">
-              <a href="/tags/"
-                ><div class="headline">标签</div>
-                <div class="length-num">12</div></a
-              >
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="menus_items">
-          <div class="menus_item">
-            <a class="site-page" href="/"
-              ><i class="fa-fw fas fa-home"></i><span> 主页</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/love/"
-              ><i class="fa-fw fas fa-heart faa-tada animated"></i
-              ><span> LOVE</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/bber/"
-              ><i class="fa-fw fa fa-link"></i><span> 说说</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/archives/"
-              ><i class="fa-fw fa fa-archive"></i><span> 归档</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/tags/"
-              ><i class="fa-fw fa fa-tags"></i><span> 标签</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/comments/"
-              ><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a
-            >
-          </div>
-          <div class="menus_item">
-            <a class="site-page" href="/about/"
-              ><i class="fa-fw fa fa-info"></i><span> 关于</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="post" id="body-wrap">
-      <header
-        class="post-bg"
-        id="page-header"
-        style="
-          background-image: url('https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg');
-        "
-      >
-        <nav id="nav">
-          <span id="blog_name"
-            ><a id="site-name" href="/">Ananiu's BLOG</a></span
-          >
-          <div id="menus">
-            <div id="search-button">
-              <a class="site-page social-icon search"
-                ><i class="fas fa-search fa-fw"></i><span> 搜索</span></a
-              >
-            </div>
-            <div class="menus_items">
-              <div class="menus_item">
-                <a class="site-page" href="/"
-                  ><i class="fa-fw fas fa-home"></i><span> 主页</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/love/"
-                  ><i class="fa-fw fas fa-heart faa-tada animated"></i
-                  ><span> LOVE</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/bber/"
-                  ><i class="fa-fw fa fa-link"></i><span> 说说</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/archives/"
-                  ><i class="fa-fw fa fa-archive"></i><span> 归档</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/tags/"
-                  ><i class="fa-fw fa fa-tags"></i><span> 标签</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/comments/"
-                  ><i class="fa-fw fa fa-paper-plane"></i
-                  ><span> 留言板</span></a
-                >
-              </div>
-              <div class="menus_item">
-                <a class="site-page" href="/about/"
-                  ><i class="fa-fw fa fa-info"></i><span> 关于</span></a
-                >
-              </div>
-            </div>
-            <div id="toggle-menu">
-              <a class="site-page"><i class="fas fa-bars fa-fw"></i></a>
-            </div>
-          </div>
-        </nav>
-        <div id="post-info">
-          <h1 class="post-title">面试汇总</h1>
-          <div id="post-meta">
-            <div class="meta-firstline">
-              <span class="post-meta-date"
-                ><i class="far fa-calendar-alt fa-fw post-meta-icon"></i
-                ><span class="post-meta-label">发表于</span
-                ><time
-                  class="post-meta-date-created"
-                  datetime="2021-05-23T16:00:00.000Z"
-                  title="发表于 2021-05-24 00:00:00"
-                  >2021-05-24</time
-                ><span class="post-meta-separator">|</span
-                ><i class="fas fa-history fa-fw post-meta-icon"></i
-                ><span class="post-meta-label">更新于</span
-                ><time
-                  class="post-meta-date-updated"
-                  datetime="2021-05-24T03:18:43.625Z"
-                  title="更新于 2021-05-24 11:18:43"
-                  >2021-05-24</time
-                ></span
-              >
-            </div>
-            <div class="meta-secondline"></div>
-          </div>
-        </div>
-      </header>
-      <main class="layout" id="content-inner">
-        <div id="post">
-          <article class="post-content" id="article-container">
-            <link
-              rel="stylesheet"
-              type="text/css"
-              href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"
-            />
-            <p>
-              <strong>面试总结</strong><br /><strong>1、h5、c3的新特性</strong>
-            </p>
-            <ul>
-              <li>
-                H5新增
-                <ol>
-                  <li>
-                    语义化标签(header, nav, article, section, aside,
-                    footer),音频视频标签(audio, video)
-                  </li>
-                  <li>
-                    新增了表单类型(number, tel,
-                    serach等)–新增的表单属性(placeholder, multiple, autofocus)
-                  </li>
-                </ol>
-              </li>
-              <li>
-                C3新增
-                <ol>
-                  <li>属性选择器和结构伪类选择器，伪元素选择器</li>
-                  <li>
-                    盒模型， box-sizing: border-box (宽=宽，padding， border)
-                  </li>
-                  <li>过渡， 动画 @keyframes</li>
-                  <li>flex 布局</li>
-                  <li>2D，3D 转换</li>
-                  <li>文字阴影， 圆角边框，背景尺寸设置</li>
-                  <li>图片边框</li>
-                </ol>
-              </li>
-            </ul>
-            <p><strong>2、存储数据的方法</strong></p>
-            <ul>
-              <li>三种 localstorage sessionstorage cookie</li>
-              <li>
-                cookie 是一段不超过4KB
-                的小型文本数据，由一个名称和一个值组成，具有安全性问题，可以设置存储周期
-              </li>
-              <li>localStorage: 持久存储，只要用户不主动删除就会一直存在</li>
-              <li>
-                sessionStorage：面向 session
-                的浏览器存储，因此只存在于一个页面的生命周期
-                内，关闭即清除两者均采用键值对的形式存储数据
-              </li>
-            </ul>
-            <p><strong>3、如何使一个盒子水平垂直居中</strong></p>
-            <ul>
-              <li>绝对定位，left 50% top50%, 平移或者margin 50%</li>
-              <li>flex布局， justify-conent: center, align-item: center</li>
-              <li>display:table-cell</li>
-              <li>利用 transform</li>
-            </ul>
-            <p><strong>4、如何让img图片和文字垂直居中</strong></p>
-            <ul>
-              <li>设置行号等于高度，图片设置 vertical-align-middle</li>
-            </ul>
-            <p><strong>5、css盒模型</strong></p>
-            <ul>
-              <li>border-box (content+padding+border)+margin</li>
-              <li>content-box（传统盒子模型） content+padding+border+margin</li>
-            </ul>
-            <p><strong>6、Css优先级</strong></p>
-            <ul>
-              <li>
-                !importent&gt;行内&gt; id&gt;
-                类，伪类，属性&gt;标签，伪元素选择器 &gt; 继承和通配符
-              </li>
-            </ul>
-            <p><strong>7、Css中有哪些属性可继承</strong></p>
-            <ul>
-              <li>
-                text/font/line/color a具有默认的颜色和下划线 ， 设置颜色和
-                text-decoration:none
-              </li>
-            </ul>
-            <p>
-              <strong>8、Display：none 与 visibility：hidden 的区别？</strong>
-            </p>
-            <ul>
-              <li>都可以使元素不可见</li>
-              <li>display 元素不可见并且在页面中不占有位置</li>
-              <li>visibility 元素不可见，但是在页面中还占有位置</li>
-            </ul>
-            <p><strong>9、清楚浮动的方法</strong></p>
-            <p>​ 一共有5中方法</p>
-            <ul>
-              <li>父盒子设置高度</li>
-              <li>overflow：hidden</li>
-              <li>伪元素</li>
-              <li>双伪元素</li>
-              <li>在父盒子末尾添加一个空盒子，设置 clear:both</li>
-            </ul>
-            <p><strong>10、如何解决盒子塌陷</strong></p>
-            <ul>
-              <li>父盒子设置上边距</li>
-              <li>overflow：hidden</li>
-              <li>子盒子脱标</li>
-              <li>父盒子上 padding</li>
-            </ul>
-            <p><strong>11、如何让input标签只输入数值</strong></p>
-            <ul>
-              <li>
-                设置 type:
-                number,但是这个情况下字母e还是可以输入的，因为e是一个数值，2.71828
-              </li>
-              <li>正则表达式 replace(/[^\d]/g,’’)</li>
-            </ul>
-            <p><strong>12、用过canvas吗？在什么时候使用过</strong></p>
-            <ul>
-              <li>
-                有使用过，但是不常用，比如：页面点击按钮需要根据图片大小切换背景，或者数据可视化echarts其实就是canvas绘制的
-              </li>
-            </ul>
-            <p><strong>13、写过移动端吗？怎么自适应</strong></p>
-            <ul>
-              <li>
-                移动端自适应通过流式布局，设置盒子大小百分比，可以自适应屏幕大小的变化
-              </li>
-              <li>
-                通过媒体查询获取屏幕大小的变化，更改页面根元素字体大小， rem
-              </li>
-            </ul>
-            <p><strong>14、基本数据类型有哪些</strong></p>
-            <ul>
-              <li>数字型，布尔型，字符串型，null， undefined，</li>
-            </ul>
-            <p><strong>15、检测数据类型的方法有哪些</strong></p>
-            <ul>
-              <li><p>typeof instanceof</p></li>
-              <li>
-                <p>
-                  toString 在对象的原型对象上由 toString
-                  方法，这个方法执行会返回 this 指向的值得数据类型，通过
-                  call/apply来改变 this 的指向
-                </p>
-              </li>
-              <li>
-                <p>
-                  typeof undefined // “undefined” typeof null // “object”
-                  （这个要记住）
-                </p>
-                <p>
-                  typeof 不能识别 null，如何识别
-                  null？可以直接使用===全等运算符来判断
-                </p>
-                <p>let a = null a === null // true</p>
-              </li>
-            </ul>
-            <p><strong>16、Console使用的方法</strong></p>
-            <ul>
-              <li>log/ dir/ time/ error/ warn</li>
-              <li>dir 用来检查一个对象，</li>
-              <li>time 输出时间，表示计时开始 timeend 即使结束</li>
-              <li>error 输出错误消息 控制台为红色叉子</li>
-              <li>warn 输出警告消息，控制台黄色惊叹号</li>
-            </ul>
-            <p><strong>17、rgba和 opticy 相同点和不同点</strong></p>
-            <ul>
-              <li>都可以设置背景的透明度</li>
-              <li>语法上来说， 一个是属性，一个是属性值，</li>
-              <li>opticy 会影响元素内部的透明度,主要是会影响文字</li>
-            </ul>
-            <p><strong>18、什么是闭包？</strong></p>
-            <ul>
-              <li>
-                闭包就是一个函数中的变量可以在别的作用域中被使用，这个函数就是闭包函数
-              </li>
-              <li>其实函数也可以说是一个闭包</li>
-            </ul>
-            <p>
-              <strong
-                >19、什么是内存泄漏？什么时候会内存泄漏呢？解决方法</strong
-              >
-            </p>
-            <ul>
-              <li>已经不需要的内存未及时释放或无法释放</li>
-              <li>
-                过多的使用全局变量，
-                当一个函数执行完之后，这个作用域中的局部变量就应该被释放
-              </li>
-              <li>通过垃圾回收机制，</li>
-            </ul>
-            <p>
-              <strong
-                >20、JS 里垃圾回收机制是什么，常用的是哪种，怎么处理的？</strong
-              >
-            </p>
-            <ul>
-              <li><p>是用来防止内存泄漏的，常用标记清除 和引用计数</p></li>
-              <li>
-                <p>
-                  <strong>标记清除：</strong
-                  >变量进入执行环境(函数声明变量时)，垃圾回收器会标记为进入环境，
-                  变量离开环境，也就是(函数执行结束)，将其标记为离开环境，离开环境之后还有的变量就需要被删除。
-                </p>
-              </li>
-              <li>
-                <p>
-                  除去环境中的变量和被这些变量引用的变量，还有标记的变量就是要回收的变量
-                </p>
-              </li>
-            </ul>
-            <p>
-              <strong
-                >21、数组常用的方法？哪些方法会改变原数组，哪些不会</strong
-              >
-            </p>
-            <ul>
-              <li>
-                会改变原数组：
-                <ul>
-                  <li>pop (删除数组的最后一个元素并返回删除的元素)</li>
-                  <li>push(向数组的末尾添加一个或更多元素，并返回新的长度)</li>
-                  <li>shift(删除并返回数组的第一个元素）</li>
-                  <li>
-                    unshift(向数组的开头添加一个或更多元素，并返回新的长度)
-                  </li>
-                  <li>reverse(反转数组的元素顺序)</li>
-                  <li>sort(对数组的元素进行排序)</li>
-                  <li>splice(用于插入、删除或替换数组的元素)</li>
-                </ul>
-              </li>
-              <li>
-                会改变原数组：
-                <ul>
-                  <li>concat—连接两个或更多的数组，并返回结果。</li>
-                  <li>every—检测数组元素的每个元素是否都符合条件。</li>
-                  <li>some—检测数组元素中是否有元素符合指定条件。</li>
-                  <li>filter—检测数组元素，并返回符合条件所有元素的数组。</li>
-                  <li>indexOf—搜索数组中的元素，并返回它所在的位置。</li>
-                  <li>join—把数组的所有元素放入一个字符串。</li>
-                  <li>toString—把数组转换为字符串，并返回结果。</li>
-                  <li>
-                    lastIndexOf—返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。
-                  </li>
-                  <li>
-                    map—通过指定函数处理数组的每个元素，并返回处理后的数组。
-                  </li>
-                  <li>slice—选取数组的的一部分，并返回一个新数组。</li>
-                  <li>valueOf—返回数组对象的原始值</li>
-                </ul>
-              </li>
-            </ul>
-            <p><strong>22、数组冒泡排序方法</strong></p>
-            <ul>
-              <li>双重 for 循环，外层循环躺数，内层循环次数</li>
-            </ul>
-            <p>
-              <strong
-                >23、一个登录页面 用户名输入时 给两边加了空格
-                可以登陆上吗</strong
-              >
-            </p>
-            <ul>
-              <li>
-                如果一个页面用户体验做的较好的话会对表单的值进行 trim
-                也就是去除两端空白的处理，这样的页面可以登陆上
-              </li>
-            </ul>
-            <p><strong>24、Split（）和 join（）的区别？</strong></p>
-            <ul>
-              <li>split 字符串转换为数组，参数为以某个字符串分隔</li>
-              <li>join 数组转换为字符串 参数表示转换为的字符串以什么连接</li>
-            </ul>
-            <p><strong>25、js 数组去重，能用几种方法实现</strong></p>
-            <ul>
-              <li>遍历数组，创建新数组，通过 indexOf 查找就数组中的值</li>
-              <li>
-                数组下标判断，利用 indexOf
-                只会返回第一个值得索引的原理，不管之后出现几次，都只会返回第一个的索引，跟现在的
-                i 比较
-              </li>
-              <li>排序后相邻去除法，如果相邻的两个值相等，去掉一个</li>
-              <li>filter</li>
-            </ul>
-            <p><strong>26、改变This指向的方法</strong></p>
-            <ul>
-              <li>call apply bind</li>
-              <li>
-                call 和 apply 都能调用函数，但是call 传参为单个， apply
-                传参为一个数组
-              </li>
-              <li>bind 只改变指向，不调用函数，参数为单个的值</li>
-              <li>箭头函数，this指向上下文的this</li>
-            </ul>
-            <p><strong>27、js 如何处理防抖和节流</strong></p>
-            <ul>
-              <li>首先 防抖就是触发下一个事件时停止掉上一个事件</li>
-              <li>节流时触发当前事件i需要在上一个事件结束以后</li>
-              <li>通过设置节流阀(定时器)</li>
-            </ul>
-            <p>
-              <strong>28、jQuery 中的 hover()和 toggle()有什么区别？</strong>
-            </p>
-            <ul>
-              <li>hover 移动到元素触发第一个函数，移出触发第二个函数</li>
-              <li>toggle 单击后依次调用绑定的函数</li>
-            </ul>
-            <p>
-              <strong
-                >29、你知道 jQuery
-                中的事件冒泡吗，它是怎么执行的，如何阻止事件冒泡？</strong
-              >
-            </p>
-            <ul>
-              <li>
-                事件冒泡是从里面的往外面开始触发的，就是点击子节点，会向上触发父节点的点击事件
-              </li>
-              <li>
-                w3c采用的是: e.stopPropation() IE采用的是:e.cancleBubble = true
-              </li>
-            </ul>
-            <p><strong>30、数据可视化用过吗？有什么使用场景</strong></p>
-            <ul>
-              <li>
-                使用过，当数据特别复杂时，通过数据可视化可以让用户更加直观的看到数据的变化
-              </li>
-              <li>echarts.js</li>
-            </ul>
-            <p><strong>31、怎么判断一个对象是空对象</strong></p>
-            <ul>
-              <li>for…in… 遍历属性 不为空返回值为true 为空返回值false</li>
-              <li>JSON.stringify == “{}”可以直观观察</li>
-              <li>
-                ES6新增的方法Object.keys() 返回值是对象中属性名组成的数组
-                再通过length来判断是否是空对象, Object.keys().length
-              </li>
-            </ul>
-            <p><strong>32、看你简历上写着es6，es6的使用有哪些呢？</strong></p>
-            <ul>
-              <li>新增了 let 声明变量和 const 声明常量</li>
-              <li>模板字符串</li>
-              <li>对象解构赋值</li>
-              <li>扩展运算符和剩余参数</li>
-              <li>箭头函数</li>
-              <li>
-                set 数据结构，类似于数组，但是内部成员都是唯一的，使用 new Set()
-                生成一个set 数据结构
-              </li>
-            </ul>
-            <p><strong>33、Ajax 的实现流程是怎样的？</strong></p>
-            <ul>
-              <li>
-                ajax
-                是一个异步的请求，可以是网页实现异步更新。也就是可以在不重新加载整个网页情况下，对网页的某部分内容进行更新
-                <ul>
-                  <li>创建 xhr 对象</li>
-                  <li>创建新的 http 请求</li>
-                  <li>
-                    设置响应 http 请求状态变化的函数 xhr.onload.onprogress
-                  </li>
-                  <li>发送 http 请求</li>
-                  <li>获取异步调用返回的数据</li>
-                  <li>使用 js 和 dom 实现局部刷新</li>
-                </ul>
-              </li>
-            </ul>
-            <p><strong>34、Vue 数据双向绑定的原理是什么?</strong></p>
-            <ul>
-              <li>MVVM 模型，</li>
-              <li>M 数据 从后台获取的商品数据</li>
-              <li>V 视图 就是写好的页面，每一个div，每一个input 都是视图</li>
-              <li>VM 视图模型，</li>
-              <li>
-                数据发生变化，通过视图模型会改变视图的显示，视图上的改变，也会通过视图模型进而影响数据的变化
-              </li>
-              <li>
-                核心：关于VUE双向数据绑定，其核心是
-                Object.defineProperty()方法。
-              </li>
-            </ul>
-            <p><strong>35、Object.defineProperty 和 Proxy 的区别</strong></p>
-            <ul>
-              <li>Proxy 可以直接监听对象而非属性；</li>
-              <li>Proxy 可以直接监听数组的变化；</li>
-              <li>
-                Proxy 有多达 13 种拦截方法,不限于
-                apply、ownKeys、deleteProperty、has 等等 是
-                Object.defineProperty 不具备的
-              </li>
-              <li>
-                Proxy 返回的是一个新对象,我们可以只操作新的对象达到目的,而
-                Object.defineProperty 只能遍历对象属性直接修改
-              </li>
-              <li>
-                Proxy
-                作为新标准将受到浏览器厂商重点持续的性能优化，也就是传说中的新标准
-                的性能红利
-              </li>
-              <li>
-                Object.defineProperty 兼容性好，支持 IE9，而 Proxy
-                的存在浏览器兼容性问题, 而且无法用 polyfill 磨平，因此 Vue
-                的作者才声明需要等到下个大版本( 3.0 )才能用 Proxy 重 写
-              </li>
-            </ul>
-            <p><strong>36、Vue2.0和3.0的区别</strong></p>
-            <p>​ <strong>1.项目目录结构</strong></p>
-            <p>​ vue-cli2.0与3.0在目录结构方面，有明显的不同</p>
-            <p>
-              ​ vue-cli3.0移除了配置文件目录，<code>config</code> 和
-              <code>build</code> 文件夹，同时移除了
-              <code>static</code> 静态文件夹，新增了
-              <code>public</code> 文件夹，打开层级目录还会发现，
-              <code>index.html</code> 移动到 <code>public</code> 中
-            </p>
-            <p>​ <strong>2.配置项</strong></p>
-            <p>
-              ​ 3.0
-              config文件已经被移除，但是多了.env.production和env.development文件，除了文件位置，实际配置起来和2.0没什么不同
-            </p>
-            <p>
-              没了config文件，跨域需要配置域名时，从config/index.js
-              挪到了vue.config.js中，配置方法不变
-            </p>
-            <p>​ <strong>3.数据监听</strong></p>
-            <p>
-              ​ Vue2.x使用的是es
-              5的object.defineproperties中getter和setter实现的
-            </p>
-            <p>
-              ​
-              vue3.0的版本，是基于Proxy进行监听的，可以理解为‘按需监听’，官方给出的诠释是：速度加倍，同时内存占用还减半。
-            </p>
-            <p><strong>37、Vue 生命周期总共分为几个阶段</strong></p>
-            <ul>
-              <li>8个阶段 创建前/后、载入前/后、更新前/后、销毁前/销毁后。</li>
-              <li>
-                创建阶段
-                <ul>
-                  <li>beforeCreate</li>
-                  <li>created</li>
-                </ul>
-              </li>
-              <li>
-                挂载阶段
-                <ul>
-                  <li>beforeMount</li>
-                  <li>mounted</li>
-                </ul>
-              </li>
-              <li>
-                更新阶段
-                <ul>
-                  <li>beforeUpdate</li>
-                  <li>updated</li>
-                </ul>
-              </li>
-              <li>
-                销毁阶段
-                <ul>
-                  <li><p>beforeDestroy</p></li>
-                  <li>
-                    <p>destroyed</p>
-                    <p>什么时候可以取到 data中得数据</p>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <p><strong>38、第一次加载页面会触发哪几个钩子函数？</strong></p>
-            <ul>
-              <li>beforeCreate</li>
-              <li>created 数据初始化完成，方法也调用，但是DOM未渲染</li>
-              <li>beforeMount</li>
-              <li>mounted DOM和数据挂在完成</li>
-            </ul>
-            <p>
-              <strong
-                >39、Vue 组件如何进行传值的? 父子间传值，跨组件传值</strong
-              >
-            </p>
-            <ul>
-              <li>父 –&gt;子 自定义属性暴露， props 接收</li>
-              <li>子–&gt; 父 $emit 保留自定义事件， 父@监听这个自定义事件</li>
-              <li>跨组件 通过事件中心， $emit暴露事件, $on监听事件</li>
-            </ul>
-            <p><strong>40、V-if 和v-show的区别</strong></p>
-            <ul>
-              <li>视觉上都是控制一个元素是否可见</li>
-              <li>v-if 控制元素是否渲染</li>
-              <li>
-                v-show
-                通过display控制元素显示隐藏，但是已经渲染到DOM树,相当于隐藏之后不占位置
-              </li>
-            </ul>
-            <p><strong>41、计算属性和普通函数的区别</strong></p>
-            <ul>
-              <li>
-                计算属性会有缓存，对一些计算量较大或者很复杂的计算，使用计算属性可以提高性能
-              </li>
-              <li>普通函数是调用一次执行一次</li>
-            </ul>
-            <p>
-              <strong>42、Var obj= {a:1,b:2}怎么转化成数据key 形式数组</strong>
-            </p>
-            <p>
-              ​
-              <img
-                src="/img/loading.gif"
-                data-lazy-src="C:\Users\samsung\AppData\Roaming\Typora\typora-user-images\image-20201101114846904.png"
-                alt="image-20201101114846904"
-              />
-            </p>
-            <p>​ hasOwnProperty</p>
-            <p>
-              <strong
-                >43、Vue 实现的双向数据绑定，那为啥要对象绑定修改的时候
-                有时候没有改变值</strong
-              >
-            </p>
-            <ul>
-              <li>
-                Vue
-                不能检测数组和对象的变化。比如我们对data中的对象属性和数组属性进行一些修改时，无法响应式更新渲染到页面，因此vue提供了<code>$set</code>这个API来解决这个限制。
-              </li>
-            </ul>
-            <p><strong>45、数组转逗号分隔的方法</strong></p>
-            <ul>
-              <li>使用 join() 方法， 传参为 ‘,’</li>
-              <li>使用 toString() 方法</li>
-            </ul>
-            <p><strong>46、字符串转数组的方法</strong></p>
-            <ul>
-              <li>split() 参数为要以什么字符分隔字符串</li>
-            </ul>
-            <p><strong>47、路由拦截，全局守卫你怎么做得</strong></p>
-            <p>​ vue-router路由钩子函数</p>
-            <ul>
-              <li>beforeEach</li>
-              <li>beforeRouteEnter</li>
-              <li>beforeRouteLeave</li>
-            </ul>
-            <p><strong>48、怎么在组件中监听路由参数的变化？</strong></p>
-            <ul>
-              <li>watch：’$route’</li>
-            </ul>
-            <p>
-              <strong
-                >49、Vue 中 solt 的使用方式，以及 solt 作用域插槽的用法</strong
-              >
-            </p>
-            <ul>
-              <li>
-                定义在template模板中，当作插槽来让 html
-                中的标签插入，有具名插槽和作用域插槽
-              </li>
-              <li>
-                作用域插槽用来对模板进行二次加工， 在html
-                通过<strong>v-solt</strong>绑定自定义属性来获取模板中的属性，通过属性来对特定需求的标签进行加工
-              </li>
-            </ul>
-            <p><strong>50、Vuex 的 5 个核心属性是什么?</strong></p>
-            <ul>
-              <li><p>state =&gt; 基本数据</p></li>
-              <li>
-                <p>
-                  getters =&gt;
-                  从基本数据(state)派生的数据，相当于state的计算属性
-                </p>
-              </li>
-              <li><p>mutations =&gt; 提交更改数据的方法，同步！</p></li>
-              <li>
-                <p>actions =&gt; 像一个装饰器，包裹mutations，使之可以异步。</p>
-              </li>
-              <li><p>modules =&gt; 模块化Vuex</p></li>
-              <li>
-                <p>简述vuex数据传递过程</p>
-                <p>
-                  ​
-                  页面通过mapAction异步提交事件到action。action通过commit把对应参数同步提交到mutation，mutation会修改state中对应的值。
-                  最后通过getter把对应值跑出去，在页面的计算属性中，通过，mapGetter来动态获取state中的值
-                </p>
-              </li>
-              <li>
-                <p>VueX用过吗</p>
-                <p>​ 用过 比如购物车页面小图标展示，或者数据存储</p>
-                <p>​ 场景：多个组件共享数据或者是跨组件传递数据时</p>
-              </li>
-            </ul>
-            <p>
-              <strong>51、Vue 的路由实现模式：hash 模式和 history 模式</strong>
-            </p>
-            <ul>
-              <li>hash 模式的url 永远带着 # 号，在开发中默认使用这个模式，</li>
-              <li>
-                如果用户考虑url的规范的话就要使用
-                history模式，因为这个模式没有#号，适合做推广宣传。
-              </li>
-              <li>
-                功能也有区别，
-                比如在开发app的时候有分享页面，这个分享出去的页面就是用vue或者
-                react做的，把这个页面分享到第三方app里，有的app是不允许出现#号的，那么就要使用history模式去掉#号
-              </li>
-              <li>
-                但是使用history时在访问二级页面时，做刷新操作会出现 404
-                错误，这时候需要和后端人员配合让他配置以下 apache 或者 nginx
-                的url重定向就可以了
-              </li>
-            </ul>
-            <p><strong>52、前端性能优化方式有哪些</strong></p>
-            <ul>
-              <li>
-                页面
-                <ul>
-                  <li>
-                    减少 http 请求，
-                    使用精灵图，可以的话尽量将外部的脚本，样式进行合并，多个合为一个。并且css，js，image都可以进行压缩，
-                  </li>
-                  <li>能用css代替效果，尽量少用图片</li>
-                  <li>图片懒加载</li>
-                  <li>减少DNS查询</li>
-                  <li>将外部脚本置底</li>
-                  <li>合理设置 http 缓存</li>
-                </ul>
-              </li>
-              <li>
-                代码
-                <ul>
-                  <li>减少 dom 操作</li>
-                  <li>
-                    慎用
-                    with，相当于增加了作用域链的长度，过长的作用域链会导致性能下贱
-                  </li>
-                  <li>减少作用域链查找</li>
-                  <li>
-                    css 使用link 不使用@import，link在页面加载时，css 同时被加载
-                  </li>
-                  <li>设置className 不直接使用css表达式</li>
-                </ul>
-              </li>
-            </ul>
-            <p><strong>53、style 上加 scoped 属性的原理吗？</strong></p>
-            <ul>
-              <li>首先，它的功能是实现组建的私有化，不对全局造成样式污染</li>
-              <li>
-                原理：
-                在DOM结构以及css样式上加上唯一标记，保证唯一，达到样式私有化
-              </li>
-              <li>想要修改组件样式，有时需要把 scoped 去掉</li>
-            </ul>
-            <p><strong>54、Vue 常用的指令都有哪些？并且说明其作用</strong></p>
-            <ul>
-              <li>v-model 实现数据双向绑定</li>
-              <li>v-bind 操作元素属性</li>
-              <li>v-on 实现事件绑定</li>
-              <li>v-if 判断这个标签是否渲染</li>
-              <li>v-for 根据数据对标签进行循环渲染</li>
-              <li>v-show 判断这个标签是否显示</li>
-              <li>v-cloak 解决插值表达式闪动</li>
-              <li>v-once 只编译一次，显示内容后不在进行响应式</li>
-              <li>v-text 填充文本 相比插值表达式更加简介</li>
-              <li>
-                v-html 填充HTML片段
-                存在安全问题,本网站内部数据可以使用,来自第三方的数据不可以用
-              </li>
-            </ul>
-            <p><strong>55、Vue 常用的修饰符都有哪些？</strong></p>
-            <ul>
-              <li>
-                事件修饰符
-                <ul>
-                  <li>enter 回车 delete 删除</li>
-                  <li>stop 阻止冒泡 prevent 阻止默认行为</li>
-                  <li>self 事件从侦听器绑定的元素本身触发时才出发回调</li>
-                  <li>once 只触发一次回调</li>
-                </ul>
-              </li>
-              <li>
-                表单
-                <ul>
-                  <li>number 进行数字类型转换</li>
-                  <li>lazy 将input事件转换为change事件</li>
-                  <li>trim 进行对表单的两边空白去除</li>
-                </ul>
-              </li>
-            </ul>
-            <p>
-              <strong
-                >56、如果一个页面中，点击按钮还是跳转本页面，但是数据是发生改变得要怎么处理</strong
-              >
-            </p>
-            <p>当前页面监听路由变化，watch:’$route’</p>
-            <p><strong>57、为什么vue中 data数据是要return出来？</strong></p>
-            <ul>
-              <li>是每个组件实例都有自己的作用域，避免造成变量污染</li>
-              <li>
-                data是一个函数，函数相当于一个闭包，要想使用函数内部数据，就需要return出来
-              </li>
-            </ul>
-            <p><strong>58 浏览器渲染得整个过程</strong></p>
-            <p>​ 解析HTML构建DOM(DOM树)，并行请求 css/image/js</p>
-            <p>​ css文件下载完成，开始构建 cssom(css 树)</p>
-            <p>​ CSSOM 构建结束后， 和Dom 一起生成Render Tree(渲染树)</p>
-            <p>
-              <strong>59 var arr = [1,[2,[3,[4]]]] 怎么输出 [1,2,3,4]</strong>
-            </p>
-            <p>​ arr.toString().split(‘,’).map(Number)</p>
-            <p><strong>60 promise参数 方法 及怎么实现串行请求</strong></p>
-            <p>​ async await / all</p>
-            <p><strong>61js 事件循环机制 event loop</strong></p>
-            <p>
-              ​
-              主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为
-              event loop
-            </p>
-            <p><strong>62 深拷贝 浅拷贝</strong></p>
-            <p>
-              ​ 首先深复制和浅复制只针对像 Object, Array
-              这样的复杂对象的。简单来说，浅复制只复制一层对象的属性，而深复制则递归复制了所
-              有层级。
-            </p>
-            <p>​ 浅拷贝 拷贝 栈</p>
-            <p>​ 深拷贝 拷贝 堆</p>
-            <p><strong>63 什么是闭包，优缺点，使用场景</strong></p>
-            <p>​ 简单来说 一个函数就是一个闭包，</p>
-            <p>​ 使用场景 ：vue 页面中 data() {}</p>
-            <p>​ 优点：避免全局污染，缺点: 造成内存泄漏</p>
-            <p><strong>64 document.write 和 innerHtml区别</strong></p>
-            <p>
-              ​ document.write 是直接写入到页面的内容流，
-              每次写完关闭之后会重新调用该函数，会导致页面被重写
-            </p>
-            <p>​ innerHTML 将页面写入某个DOM节点，不会导致页面全部重绘</p>
-            <p><strong>65 let var const 区别</strong></p>
-            <p>​ var 声明变量可以重复声明，而let 不可以重复声明</p>
-            <p>​ var 是不受限于块级的， 而let 是受限于块级</p>
-            <p>​ const 声明之后必须赋值，否则会报错</p>
-            <p><strong>66 $router 和 $route 的区别</strong></p>
-            <p>
-              ​ route 是路由信息对象，包括path、params、hash
-              、query、fullPath、matched、name等路由信息对象
-            </p>
-            <p>​ router 为VueRouter 的实例。相当于一个全局的路由对象</p>
-            <p><strong>67 路由传参的方式及路由跳转的方式</strong></p>
-            <p>
-              ​ 传参方式 ： query (页面刷新会保留) 、params(页面刷新不会保留)
-            </p>
-            <p>​ 跳转方式： back、push、go、replace、 router-link (声明式)</p>
-            <p><strong>68 vue key值作用</strong></p>
-            <p>​ 唯一值，更好的渲染 Dom</p>
-            <p>
-              <strong
-                >69 为什么避免 v-if 和 v-for 同时使用，v-if 和
-                v-for优先级</strong
-              >
-            </p>
-            <p>​ v-for的优先级 比 v-if 高</p>
-            <p>
-              ​ 通过 v-if
-              移动到容器元素，不会再重复遍历列表的每个值，取而代之的是，我们检查它一次，且不会在v-if为否的时候运算
-              v-for
-            </p>
-          </article>
-          <div class="post-copyright">
-            <div class="post-copyright__author">
-              <span class="post-copyright-meta">文章作者: </span
-              ><span class="post-copyright-info"
-                ><a href="mailto:undefined">Ananiu</a></span
-              >
-            </div>
-            <div class="post-copyright__type">
-              <span class="post-copyright-meta">文章链接: </span
-              ><span class="post-copyright-info"
-                ><a href="https://ananiu.xyz/posts/mianshi.html/"
-                  >https://ananiu.xyz/posts/mianshi.html/</a
-                ></span
-              >
-            </div>
-            <div class="post-copyright__notice">
-              <span class="post-copyright-meta">版权声明: </span
-              ><span class="post-copyright-info"
-                >本博客所有文章除特别声明外，均采用
-                <a
-                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                  target="_blank"
-                  >CC BY-NC-SA 4.0</a
-                >
-                许可协议。转载请注明来自
-                <a href="https://ananiu.xyz" target="_blank">Ananiu's BLOG</a
-                >！</span
-              >
-            </div>
-          </div>
-          <div class="tag_share">
-            <div class="post-meta__tag-list">
-              <a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/"
-                >前端</a
-              ><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/"
-                >面试</a
-              >
-            </div>
-            <div class="post_share">
-              <div
-                class="social-share"
-                data-image="https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg"
-                data-sites="facebook,twitter,wechat,weibo,qq"
-              ></div>
-              <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"
-                media="print"
-                onload="this.media='all'"
-              />
-              <script
-                src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"
-                defer
-              ></script>
-            </div>
-          </div>
-          <nav class="pagination-post" id="pagination">
-            <div class="prev-post pull-left">
-              <a href="/posts/elementuiForm.html/"
-                ><img
-                  class="prev-cover"
-                  data-lazy-src="https://i.loli.net/2020/12/10/PxUtYv75oglSq8D.jpg"
-                  onerror="onerror=null;src='/img/404.jpg'"
-                  alt="cover of previous post"
-                />
-                <div class="pagination-info">
-                  <div class="label">上一篇</div>
-                  <div class="prev_info">element ui form表单校验</div>
-                </div></a
-              >
-            </div>
-            <div class="next-post pull-right">
-              <a href="/posts/elementuizzbd.html/"
-                ><img
-                  class="next-cover"
-                  data-lazy-src="https://i.loli.net/2020/12/10/jI1Rwkn8d2Cz54W.jpg"
-                  onerror="onerror=null;src='/img/404.jpg'"
-                  alt="cover of next post"
-                />
-                <div class="pagination-info">
-                  <div class="label">下一篇</div>
-                  <div class="next_info">
-                    element ui 使用正则表达式进行校验 表单数据
-                  </div>
-                </div></a
-              >
-            </div>
-          </nav>
-          <div class="relatedPosts">
-            <div class="headline">
-              <i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span>
-            </div>
-            <div class="relatedPosts-list">
-              <div>
-                <a
-                  href="/posts/elementuizzbd.html/"
-                  title="element ui 使用正则表达式进行校验 表单数据"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/jI1Rwkn8d2Cz54W.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2021-05-19
-                    </div>
-                    <div class="title">
-                      element ui 使用正则表达式进行校验 表单数据
-                    </div>
-                  </div></a
-                >
-              </div>
-              <div>
-                <a
-                  href="/posts/elementuiForm.html/"
-                  title="element ui  form表单校验"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/PxUtYv75oglSq8D.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2021-05-24
-                    </div>
-                    <div class="title">element ui form表单校验</div>
-                  </div></a
-                >
-              </div>
-              <div>
-                <a href="/posts/flex.html/" title="flex 布局"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/ZsW3yG2qx5loJNv.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2021-05-05
-                    </div>
-                    <div class="title">flex 布局</div>
-                  </div></a
-                >
-              </div>
-              <div>
-                <a href="/posts/Ajax.html/" title="Ajax"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2020-03-12
-                    </div>
-                    <div class="title">Ajax</div>
-                  </div></a
-                >
-              </div>
-              <div>
-                <a href="/posts/jsgaoji.html/" title="js高级"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2021-05-05
-                    </div>
-                    <div class="title">js高级</div>
-                  </div></a
-                >
-              </div>
-              <div>
-                <a href="/posts/jquery.html/" title="jQuery 总结"
-                  ><img
-                    class="cover"
-                    data-lazy-src="https://i.loli.net/2020/12/10/kLtdEV2fZTJCA3N.jpg"
-                    alt="cover"
-                  />
-                  <div class="content is-center">
-                    <div class="date">
-                      <i class="far fa-calendar-alt fa-fw"></i> 2020-02-18
-                    </div>
-                    <div class="title">jQuery 总结</div>
-                  </div></a
-                >
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div id="post-comment">
-            <div class="comment-head">
-              <div class="comment-headline">
-                <i class="fas fa-comments fa-fw"></i><span> 评论</span>
-              </div>
-            </div>
-            <div class="comment-wrap">
-              <div><div id="twikoo-wrap"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="aside-content" id="aside-content">
-          <div class="card-widget card-info">
-            <div class="card-info-avatar is-center">
-              <img
-                class="avatar-img"
-                data-lazy-src="https://avatars.githubusercontent.com/u/80749242?v=4"
-                onerror="this.onerror=null;this.src='/img/friend_404.gif'"
-                alt="avatar"
-              />
-              <div class="author-info__name">Ananiu</div>
-              <div class="author-info__description">
-                一个收藏回忆与分享技术的地方
-              </div>
-            </div>
-            <div class="card-info-data">
-              <div class="card-info-data-item is-center">
-                <a href="/archives/"
-                  ><div class="headline">文章</div>
-                  <div class="length-num">11</div></a
-                >
-              </div>
-              <div class="card-info-data-item is-center">
-                <a href="/tags/"
-                  ><div class="headline">标签</div>
-                  <div class="length-num">12</div></a
-                >
-              </div>
-            </div>
-            <a class="button--animated" id="card-info-btn" href="/"
-              ><i class="fa fa-bookmark"></i><span>点我~~</span></a
-            >
-            <div class="card-info-social-icons is-center">
-              <a
-                class="social-icon"
-                href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=5712974"
-                target="_blank"
-                title="QQ"
-                ><i class="fab fa-qq"></i></a
-              ><a
-                class="social-icon"
-                href="https://github.com/ananius"
-                target="_blank"
-                title="Github"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-          </div>
-          <div class="sticky_layout">
-            <div class="card-widget card-recent-post">
-              <div class="item-headline">
-                <i class="fas fa-history"></i><span>最新文章</span>
-              </div>
-              <div class="aside-list">
-                <div class="aside-list-item">
-                  <a
-                    class="thumbnail"
-                    href="/posts/elementuiForm.html/"
-                    title="element ui  form表单校验"
-                    ><img
-                      data-lazy-src="https://i.loli.net/2020/12/10/PxUtYv75oglSq8D.jpg"
-                      onerror="this.onerror=null;this.src='/img/404.jpg'"
-                      alt="element ui  form表单校验"
-                  /></a>
-                  <div class="content">
-                    <a
-                      class="title"
-                      href="/posts/elementuiForm.html/"
-                      title="element ui  form表单校验"
-                      >element ui form表单校验</a
-                    ><time
-                      datetime="2021-05-23T16:00:00.000Z"
-                      title="发表于 2021-05-24 00:00:00"
-                      >2021-05-24</time
-                    >
-                  </div>
-                </div>
-                <div class="aside-list-item">
-                  <a
-                    class="thumbnail"
-                    href="/posts/mianshi.html/"
-                    title="面试汇总"
-                    ><img
-                      data-lazy-src="https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg"
-                      onerror="this.onerror=null;this.src='/img/404.jpg'"
-                      alt="面试汇总"
-                  /></a>
-                  <div class="content">
-                    <a
-                      class="title"
-                      href="/posts/mianshi.html/"
-                      title="面试汇总"
-                      >面试汇总</a
-                    ><time
-                      datetime="2021-05-23T16:00:00.000Z"
-                      title="发表于 2021-05-24 00:00:00"
-                      >2021-05-24</time
-                    >
-                  </div>
-                </div>
-                <div class="aside-list-item">
-                  <a
-                    class="thumbnail"
-                    href="/posts/elementuizzbd.html/"
-                    title="element ui 使用正则表达式进行校验 表单数据"
-                    ><img
-                      data-lazy-src="https://i.loli.net/2020/12/10/jI1Rwkn8d2Cz54W.jpg"
-                      onerror="this.onerror=null;this.src='/img/404.jpg'"
-                      alt="element ui 使用正则表达式进行校验 表单数据"
-                  /></a>
-                  <div class="content">
-                    <a
-                      class="title"
-                      href="/posts/elementuizzbd.html/"
-                      title="element ui 使用正则表达式进行校验 表单数据"
-                      >element ui 使用正则表达式进行校验 表单数据</a
-                    ><time
-                      datetime="2021-05-19T07:42:00.000Z"
-                      title="发表于 2021-05-19 15:42:00"
-                      >2021-05-19</time
-                    >
-                  </div>
-                </div>
-                <div class="aside-list-item">
-                  <a class="thumbnail" href="/posts/vue.html/" title="Vue"
-                    ><img
-                      data-lazy-src="https://i.loli.net/2020/12/10/ZsW3yG2qx5loJNv.jpg"
-                      onerror="this.onerror=null;this.src='/img/404.jpg'"
-                      alt="Vue"
-                  /></a>
-                  <div class="content">
-                    <a class="title" href="/posts/vue.html/" title="Vue">Vue</a
-                    ><time
-                      datetime="2021-05-12T09:57:50.000Z"
-                      title="发表于 2021-05-12 17:57:50"
-                      >2021-05-12</time
-                    >
-                  </div>
-                </div>
-                <div class="aside-list-item">
-                  <a
-                    class="thumbnail"
-                    href="/posts/flex.html/"
-                    title="flex 布局"
-                    ><img
-                      data-lazy-src="https://i.loli.net/2020/12/10/ZsW3yG2qx5loJNv.jpg"
-                      onerror="this.onerror=null;this.src='/img/404.jpg'"
-                      alt="flex 布局"
-                  /></a>
-                  <div class="content">
-                    <a class="title" href="/posts/flex.html/" title="flex 布局"
-                      >flex 布局</a
-                    ><time
-                      datetime="2021-05-05T04:57:50.000Z"
-                      title="发表于 2021-05-05 12:57:50"
-                      >2021-05-05</time
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer
-        id="footer"
-        style="
-          background-image: url('https://i.loli.net/2020/12/10/hBcVbn9dfZl5XvT.jpg');
-        "
-      >
-        <div id="footer-wrap">
-          <div class="copyright">&copy;2020 - 2021 By Ananiu</div>
-          <div class="framework-info">
-            <span>框架 </span
-            ><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a
-            ><span class="footer-separator">|</span><span>主题 </span
-            ><a
-              target="_blank"
-              rel="noopener"
-              href="https://github.com/jerryc127/hexo-theme-butterfly"
-              >Butterfly</a
-            >
-          </div>
-        </div>
-      </footer>
-    </div>
-    <div id="rightside">
-      <div id="rightside-config-hide">
-        <button id="readmode" type="button" title="阅读模式">
-          <i class="fas fa-book-open"></i></button
-        ><button id="font-plus" type="button" title="放大字体">
-          <i class="fas fa-plus"></i></button
-        ><button id="font-minus" type="button" title="缩小字体">
-          <i class="fas fa-minus"></i></button
-        ><button id="translateLink" type="button" title="简繁转换">繁</button
-        ><button id="darkmode" type="button" title="浅色和深色模式转换">
-          <i class="fas fa-adjust"></i></button
-        ><button id="hide-aside-btn" type="button" title="单栏和双栏切换">
-          <i class="fas fa-arrows-alt-h"></i>
-        </button>
-      </div>
-      <div id="rightside-config-show">
-        <button id="rightside_config" type="button" title="设置">
-          <i class="fas fa-cog fa-spin"></i></button
-        ><a id="to_comment" href="#post-comment" title="直达评论"
-          ><i class="fas fa-comments"></i></a
-        ><button id="go-up" type="button" title="回到顶部">
-          <i class="fas fa-arrow-up"></i>
-        </button>
-      </div>
-    </div>
-    <div id="local-search">
-      <div class="search-dialog">
-        <div class="search-dialog__title" id="local-search-title">本地搜索</div>
-        <div id="local-input-panel">
-          <div id="local-search-input">
-            <div class="local-search-box">
-              <input
-                class="local-search-box--input"
-                placeholder="搜索文章"
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div id="local-search-results"></div>
-        <span class="search-close-button"><i class="fas fa-times"></i></span>
-      </div>
-      <div id="search-mask"></div>
-    </div>
-    <div>
-      <script src="/js/utils.js"></script>
-      <script src="/js/main.js"></script>
-      <script src="/js/tw_cn.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js"
-        type="module"
-      ></script>
-      <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script>
-      <script src="/js/search/local-search.js"></script>
-      <script>
-        var preloader = {
-          endLoading: () => {
-            document.body.style.overflow = "auto";
-            document.getElementById("loading-box").classList.add("loaded");
-          },
-          initLoading: () => {
-            document.body.style.overflow = "";
-            document.getElementById("loading-box").classList.remove("loaded");
-          },
-        };
-        window.addEventListener("load", preloader.endLoading());
-      </script>
-      <div class="js-pjax">
-        <script>
-          (() => {
-            const $countDom = document.getElementById("twikoo-count");
-            const init = () => {
-              twikoo.init(
-                Object.assign(
-                  {
-                    el: "#twikoo-wrap",
-                    envId: "env-6gxxlajh1c9565f9",
-                    region: "ap-shanghai",
-                  },
-                  null
-                )
-              );
-            };
-
-            const getCount = () => {
-              twikoo
-                .getCommentsCount({
-                  envId: "env-6gxxlajh1c9565f9",
-                  region: "ap-shanghai",
-                  urls: [window.location.pathname],
-                  includeReply: false,
-                })
-                .then(function (res) {
-                  $countDom.innerText = res[0].count;
-                })
-                .catch(function (err) {
-                  console.error(err);
-                });
-            };
-
-            const loadTwikoo = (bool = false) => {
-              if (typeof twikoo === "object") {
-                init();
-                bool && $countDom && setTimeout(getCount, 0);
-              } else {
-                getScript(
-                  "https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"
-                ).then(() => {
-                  init();
-                  bool && $countDom && setTimeout(getCount, 0);
-                });
-              }
-            };
-
-            if ("Twikoo" === "Twikoo" || !false) {
-              if (false)
-                btf.loadComment(
-                  document.getElementById("twikoo-wrap"),
-                  loadTwikoo
-                );
-              else loadTwikoo(true);
-            } else {
-              window.loadOtherComment = () => {
-                loadTwikoo();
-              };
-            }
-          })();
-        </script>
-      </div>
-      <script src="https://cdn.jsdelivr.net/gh/xiaopengand/blogCdn@latest/fishes.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script>
-      <script>
-        POWERMODE.colorful = true;
-        POWERMODE.shake = false;
-        POWERMODE.mobile = false;
-        document.body.addEventListener("input", POWERMODE);
-      </script>
-    </div>
-    <!-- hexo injector body_end start -->
-    <script data-pjax>
-      function electric_clock_injector_config() {
-        var parent_div_git =
-          document.getElementsByClassName("sticky_layout")[0];
-        var item_html =
-          '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
-        console.log("已挂载electric_clock");
-        // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
-        parent_div_git.insertAdjacentHTML("afterbegin", item_html); // 有报错，但不影响使用(支持pjax跳转)
+        return item.value
       }
-      if (
-        document.getElementsByClassName("sticky_layout")[0] &&
-        (location.pathname === "all" || "all" === "all")
-      ) {
-        electric_clock_injector_config();
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
       }
-    </script>
-    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-    <script
-      data-pjax
-      src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"
-    ></script>
-    <!-- hexo injector body_end end -->
-  </body>
-</html>
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://avatars.githubusercontent.com/u/80749242?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/love/"><i class="fa-fw fas fa-heart   faa-tada animated"></i><span> LOVE</span></a></div><div class="menus_item"><a class="site-page" href="/bber/"><i class="fa-fw fa fa-link"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-info"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ananiu's BLOG</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/love/"><i class="fa-fw fas fa-heart   faa-tada animated"></i><span> LOVE</span></a></div><div class="menus_item"><a class="site-page" href="/bber/"><i class="fa-fw fa fa-link"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-info"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-23T16:00:00.000Z" title="发表于 2021-05-24 00:00:00">2021-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-24T03:18:43.625Z" title="更新于 2021-05-24 11:18:43">2021-05-24</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>面试总结</strong><br><strong>1、h5、c3的新特性</strong></p>
+<ul>
+<li>H5新增<ol>
+<li>语义化标签(header, nav, article, section, aside, footer),音频视频标签(audio, video)</li>
+<li>新增了表单类型(number, tel, serach等)–新增的表单属性(placeholder, multiple, autofocus)</li>
+</ol>
+</li>
+<li>C3新增<ol>
+<li>属性选择器和结构伪类选择器，伪元素选择器</li>
+<li>盒模型， box-sizing: border-box  (宽=宽，padding， border)</li>
+<li>过渡， 动画  @keyframes</li>
+<li>flex 布局</li>
+<li>2D，3D 转换</li>
+<li>文字阴影， 圆角边框，背景尺寸设置</li>
+<li>图片边框</li>
+</ol>
+</li>
+</ul>
+<p><strong>2、存储数据的方法</strong></p>
+<ul>
+<li>三种 localstorage  sessionstorage  cookie</li>
+<li>cookie 是一段不超过4KB 的小型文本数据，由一个名称和一个值组成，具有安全性问题，可以设置存储周期</li>
+<li>localStorage: 持久存储，只要用户不主动删除就会一直存在</li>
+<li>sessionStorage：面向 session 的浏览器存储，因此只存在于一个页面的生命周期 内，关闭即清除两者均采用键值对的形式存储数据</li>
+</ul>
+<p><strong>3、如何使一个盒子水平垂直居中</strong></p>
+<ul>
+<li>绝对定位，left 50% top50%, 平移或者margin 50%</li>
+<li>flex布局， justify-conent: center, align-item: center</li>
+<li>display:table-cell</li>
+<li>利用 transform</li>
+</ul>
+<p><strong>4、如何让img图片和文字垂直居中</strong></p>
+<ul>
+<li>设置行号等于高度，图片设置  vertical-align-middle</li>
+</ul>
+<p><strong>5、css盒模型</strong></p>
+<ul>
+<li>border-box (content+padding+border)+margin    </li>
+<li>content-box（传统盒子模型）     content+padding+border+margin   </li>
+</ul>
+<p><strong>6、Css优先级</strong></p>
+<ul>
+<li>!importent&gt;行内&gt; id&gt; 类，伪类，属性&gt;标签，伪元素选择器 &gt; 继承和通配符</li>
+</ul>
+<p><strong>7、Css中有哪些属性可继承</strong></p>
+<ul>
+<li>text/font/line/color  a具有默认的颜色和下划线 ， 设置颜色和 text-decoration:none</li>
+</ul>
+<p><strong>8、Display：none 与 visibility：hidden 的区别？</strong></p>
+<ul>
+<li>都可以使元素不可见</li>
+<li>display   元素不可见并且在页面中不占有位置</li>
+<li>visibility  元素不可见，但是在页面中还占有位置</li>
+</ul>
+<p><strong>9、清楚浮动的方法</strong></p>
+<p>​    一共有5中方法</p>
+<ul>
+<li>父盒子设置高度</li>
+<li>overflow：hidden</li>
+<li>伪元素</li>
+<li>双伪元素</li>
+<li>在父盒子末尾添加一个空盒子，设置 clear:both</li>
+</ul>
+<p><strong>10、如何解决盒子塌陷</strong></p>
+<ul>
+<li>父盒子设置上边距</li>
+<li>overflow：hidden</li>
+<li>子盒子脱标</li>
+<li>父盒子上 padding</li>
+</ul>
+<p><strong>11、如何让input标签只输入数值</strong></p>
+<ul>
+<li>设置 type: number,但是这个情况下字母e还是可以输入的，因为e是一个数值，2.71828</li>
+<li>正则表达式  replace(/[^\d]/g,’’)</li>
+</ul>
+<p><strong>12、用过canvas吗？在什么时候使用过</strong></p>
+<ul>
+<li>有使用过，但是不常用，比如：页面点击按钮需要根据图片大小切换背景，或者数据可视化echarts其实就是canvas绘制的</li>
+</ul>
+<p><strong>13、写过移动端吗？怎么自适应</strong></p>
+<ul>
+<li>移动端自适应通过流式布局，设置盒子大小百分比，可以自适应屏幕大小的变化</li>
+<li>通过媒体查询获取屏幕大小的变化，更改页面根元素字体大小， rem</li>
+</ul>
+<p><strong>14、基本数据类型有哪些</strong></p>
+<ul>
+<li>数字型，布尔型，字符串型，null， undefined，</li>
+</ul>
+<p><strong>15、检测数据类型的方法有哪些</strong> </p>
+<ul>
+<li><p>typeof   instanceof</p>
+</li>
+<li><p>toString  在对象的原型对象上由 toString 方法，这个方法执行会返回 this 指向的值得数据类型，通过 call/apply来改变 this 的指向</p>
+</li>
+<li><p>typeof undefined // “undefined”       typeof null // “object” （这个要记住）</p>
+<p>typeof 不能识别 null，如何识别 null？可以直接使用===全等运算符来判断</p>
+<p>let a = null   a === null     // true</p>
+</li>
+</ul>
+<p><strong>16、Console使用的方法</strong></p>
+<ul>
+<li>log/ dir/ time/ error/ warn</li>
+<li>dir 用来检查一个对象，</li>
+<li>time  输出时间，表示计时开始 timeend 即使结束</li>
+<li>error  输出错误消息 控制台为红色叉子</li>
+<li>warn  输出警告消息，控制台黄色惊叹号</li>
+</ul>
+<p><strong>17、rgba和 opticy 相同点和不同点</strong></p>
+<ul>
+<li>都可以设置背景的透明度</li>
+<li>语法上来说， 一个是属性，一个是属性值，</li>
+<li>opticy 会影响元素内部的透明度,主要是会影响文字</li>
+</ul>
+<p><strong>18、什么是闭包？</strong></p>
+<ul>
+<li>闭包就是一个函数中的变量可以在别的作用域中被使用，这个函数就是闭包函数</li>
+<li>其实函数也可以说是一个闭包</li>
+</ul>
+<p><strong>19、什么是内存泄漏？什么时候会内存泄漏呢？解决方法</strong></p>
+<ul>
+<li>已经不需要的内存未及时释放或无法释放</li>
+<li>过多的使用全局变量， 当一个函数执行完之后，这个作用域中的局部变量就应该被释放</li>
+<li>通过垃圾回收机制，</li>
+</ul>
+<p><strong>20、JS 里垃圾回收机制是什么，常用的是哪种，怎么处理的？</strong></p>
+<ul>
+<li><p>是用来防止内存泄漏的，常用标记清除 和引用计数</p>
+</li>
+<li><p><strong>标记清除：</strong>变量进入执行环境(函数声明变量时)，垃圾回收器会标记为进入环境， 变量离开环境，也就是(函数执行结束)，将其标记为离开环境，离开环境之后还有的变量就需要被删除。</p>
+</li>
+<li><p>除去环境中的变量和被这些变量引用的变量，还有标记的变量就是要回收的变量</p>
+</li>
+</ul>
+<p><strong>21、数组常用的方法？哪些方法会改变原数组，哪些不会</strong></p>
+<ul>
+<li>会改变原数组：<ul>
+<li>pop (删除数组的最后一个元素并返回删除的元素) </li>
+<li> push(向数组的末尾添加一个或更多元素，并返回新的长度)</li>
+<li>shift(删除并返回数组的第一个元素）</li>
+<li>unshift(向数组的开头添加一个或更多元素，并返回新的长度)</li>
+<li>reverse(反转数组的元素顺序)</li>
+<li>sort(对数组的元素进行排序)</li>
+<li>splice(用于插入、删除或替换数组的元素)</li>
+</ul>
+</li>
+<li>会改变原数组：<ul>
+<li>concat—连接两个或更多的数组，并返回结果。</li>
+<li>every—检测数组元素的每个元素是否都符合条件。</li>
+<li>some—检测数组元素中是否有元素符合指定条件。</li>
+<li>filter—检测数组元素，并返回符合条件所有元素的数组。</li>
+<li>indexOf—搜索数组中的元素，并返回它所在的位置。</li>
+<li>join—把数组的所有元素放入一个字符串。</li>
+<li>toString—把数组转换为字符串，并返回结果。</li>
+<li>lastIndexOf—返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。</li>
+<li>map—通过指定函数处理数组的每个元素，并返回处理后的数组。</li>
+<li>slice—选取数组的的一部分，并返回一个新数组。</li>
+<li>valueOf—返回数组对象的原始值</li>
+</ul>
+</li>
+</ul>
+<p><strong>22、数组冒泡排序方法</strong></p>
+<ul>
+<li>双重 for 循环，外层循环躺数，内层循环次数</li>
+</ul>
+<p><strong>23、一个登录页面 用户名输入时 给两边加了空格 可以登陆上吗</strong></p>
+<ul>
+<li>如果一个页面用户体验做的较好的话会对表单的值进行 trim 也就是去除两端空白的处理，这样的页面可以登陆上</li>
+</ul>
+<p><strong>24、Split（）和 join（）的区别？</strong></p>
+<ul>
+<li>split  字符串转换为数组，参数为以某个字符串分隔</li>
+<li>join   数组转换为字符串 参数表示转换为的字符串以什么连接</li>
+</ul>
+<p><strong>25、js 数组去重，能用几种方法实现</strong></p>
+<ul>
+<li>遍历数组，创建新数组，通过 indexOf 查找就数组中的值</li>
+<li>数组下标判断，利用 indexOf 只会返回第一个值得索引的原理，不管之后出现几次，都只会返回第一个的索引，跟现在的 i 比较</li>
+<li>排序后相邻去除法，如果相邻的两个值相等，去掉一个</li>
+<li>filter</li>
+</ul>
+<p><strong>26、改变This指向的方法</strong></p>
+<ul>
+<li>call  apply  bind  </li>
+<li>call 和 apply 都能调用函数，但是call 传参为单个， apply 传参为一个数组</li>
+<li>bind  只改变指向，不调用函数，参数为单个的值</li>
+<li>箭头函数，this指向上下文的this</li>
+</ul>
+<p><strong>27、js 如何处理防抖和节流</strong></p>
+<ul>
+<li>首先 防抖就是触发下一个事件时停止掉上一个事件</li>
+<li>节流时触发当前事件i需要在上一个事件结束以后</li>
+<li>通过设置节流阀(定时器)</li>
+</ul>
+<p><strong>28、jQuery 中的 hover()和 toggle()有什么区别？</strong></p>
+<ul>
+<li>hover 移动到元素触发第一个函数，移出触发第二个函数</li>
+<li>toggle  单击后依次调用绑定的函数</li>
+</ul>
+<p><strong>29、你知道 jQuery 中的事件冒泡吗，它是怎么执行的，如何阻止事件冒泡？</strong></p>
+<ul>
+<li>事件冒泡是从里面的往外面开始触发的，就是点击子节点，会向上触发父节点的点击事件</li>
+<li>w3c采用的是: e.stopPropation()      IE采用的是:e.cancleBubble = true</li>
+</ul>
+<p><strong>30、数据可视化用过吗？有什么使用场景</strong></p>
+<ul>
+<li>使用过，当数据特别复杂时，通过数据可视化可以让用户更加直观的看到数据的变化</li>
+<li>echarts.js</li>
+</ul>
+<p><strong>31、怎么判断一个对象是空对象</strong></p>
+<ul>
+<li>for…in… 遍历属性   不为空返回值为true  为空返回值false</li>
+<li>JSON.stringify   == “{}”可以直观观察</li>
+<li>ES6新增的方法Object.keys() 返回值是对象中属性名组成的数组  再通过length来判断是否是空对象, Object.keys().length</li>
+</ul>
+<p><strong>32、看你简历上写着es6，es6的使用有哪些呢？</strong></p>
+<ul>
+<li>新增了 let 声明变量和 const 声明常量</li>
+<li>模板字符串</li>
+<li>对象解构赋值</li>
+<li>扩展运算符和剩余参数</li>
+<li>箭头函数</li>
+<li>set 数据结构，类似于数组，但是内部成员都是唯一的，使用  new Set() 生成一个set 数据结构</li>
+</ul>
+<p><strong>33、Ajax 的实现流程是怎样的？</strong></p>
+<ul>
+<li>ajax 是一个异步的请求，可以是网页实现异步更新。也就是可以在不重新加载整个网页情况下，对网页的某部分内容进行更新<ul>
+<li>创建 xhr 对象</li>
+<li>创建新的 http 请求</li>
+<li>设置响应 http 请求状态变化的函数  xhr.onload.onprogress</li>
+<li>发送 http 请求</li>
+<li>获取异步调用返回的数据</li>
+<li>使用 js 和 dom 实现局部刷新</li>
+</ul>
+</li>
+</ul>
+<p><strong>34、Vue 数据双向绑定的原理是什么?</strong></p>
+<ul>
+<li>MVVM 模型， </li>
+<li>M 数据 从后台获取的商品数据</li>
+<li>V 视图  就是写好的页面，每一个div，每一个input 都是视图</li>
+<li>VM  视图模型，</li>
+<li>数据发生变化，通过视图模型会改变视图的显示，视图上的改变，也会通过视图模型进而影响数据的变化</li>
+<li>核心：关于VUE双向数据绑定，其核心是 Object.defineProperty()方法。</li>
+</ul>
+<p><strong>35、Object.defineProperty 和 Proxy 的区别</strong></p>
+<ul>
+<li>Proxy 可以直接监听对象而非属性； </li>
+<li>Proxy 可以直接监听数组的变化； </li>
+<li>Proxy 有多达 13 种拦截方法,不限于 apply、ownKeys、deleteProperty、has 等等 是 Object.defineProperty 不具备的 </li>
+<li>Proxy 返回的是一个新对象,我们可以只操作新的对象达到目的,而 Object.defineProperty 只能遍历对象属性直接修改 </li>
+<li>Proxy 作为新标准将受到浏览器厂商重点持续的性能优化，也就是传说中的新标准 的性能红利 </li>
+<li>Object.defineProperty 兼容性好，支持 IE9，而 Proxy 的存在浏览器兼容性问题, 而且无法用 polyfill 磨平，因此 Vue 的作者才声明需要等到下个大版本( 3.0 )才能用 Proxy 重 写</li>
+</ul>
+<p><strong>36、Vue2.0和3.0的区别</strong></p>
+<p>​    <strong>1.项目目录结构</strong></p>
+<p>​            vue-cli2.0与3.0在目录结构方面，有明显的不同</p>
+<p>​            vue-cli3.0移除了配置文件目录，<code>config</code> 和 <code>build</code> 文件夹，同时移除了 <code>static</code> 静态文件夹，新增了 <code>public</code> 文件夹，打开层级目录还会发现， <code>index.html</code> 移动到 <code>public</code> 中</p>
+<p>​    <strong>2.配置项</strong></p>
+<p>​            3.0 config文件已经被移除，但是多了.env.production和env.development文件，除了文件位置，实际配置起来和2.0没什么不同</p>
+<p>没了config文件，跨域需要配置域名时，从config/index.js 挪到了vue.config.js中，配置方法不变</p>
+<p>​    <strong>3.数据监听</strong></p>
+<p>​            Vue2.x使用的是es 5的object.defineproperties中getter和setter实现的</p>
+<p>​            vue3.0的版本，是基于Proxy进行监听的，可以理解为‘按需监听’，官方给出的诠释是：速度加倍，同时内存占用还减半。</p>
+<p><strong>37、Vue 生命周期总共分为几个阶段</strong></p>
+<ul>
+<li>8个阶段  创建前/后、载入前/后、更新前/后、销毁前/销毁后。</li>
+<li>创建阶段<ul>
+<li>beforeCreate </li>
+<li>created</li>
+</ul>
+</li>
+<li>挂载阶段<ul>
+<li>beforeMount</li>
+<li>mounted</li>
+</ul>
+</li>
+<li>更新阶段<ul>
+<li>beforeUpdate</li>
+<li>updated</li>
+</ul>
+</li>
+<li>销毁阶段<ul>
+<li><p>beforeDestroy</p>
+</li>
+<li><p>destroyed</p>
+<p>什么时候可以取到 data中得数据</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>38、第一次加载页面会触发哪几个钩子函数？</strong></p>
+<ul>
+<li>beforeCreate  </li>
+<li>created  数据初始化完成，方法也调用，但是DOM未渲染</li>
+<li>beforeMount</li>
+<li>mounted  DOM和数据挂在完成</li>
+</ul>
+<p><strong>39、Vue 组件如何进行传值的? 父子间传值，跨组件传值</strong> </p>
+<ul>
+<li>父 –&gt;子   自定义属性暴露， props 接收</li>
+<li>子–&gt; 父  $emit 保留自定义事件， 父@监听这个自定义事件</li>
+<li>跨组件   通过事件中心， $emit暴露事件, $on监听事件</li>
+</ul>
+<p><strong>40、V-if 和v-show的区别</strong></p>
+<ul>
+<li>视觉上都是控制一个元素是否可见</li>
+<li>v-if  控制元素是否渲染</li>
+<li>v-show  通过display控制元素显示隐藏，但是已经渲染到DOM树,相当于隐藏之后不占位置</li>
+</ul>
+<p><strong>41、计算属性和普通函数的区别</strong></p>
+<ul>
+<li>计算属性会有缓存，对一些计算量较大或者很复杂的计算，使用计算属性可以提高性能</li>
+<li>普通函数是调用一次执行一次</li>
+</ul>
+<p><strong>42、Var obj= {a:1,b:2}怎么转化成数据key 形式数组</strong></p>
+<p>​        <img src= "/img/loading.gif" data-lazy-src="C:\Users\samsung\AppData\Roaming\Typora\typora-user-images\image-20201101114846904.png" alt="image-20201101114846904"></p>
+<p>​      hasOwnProperty</p>
+<p><strong>43、Vue 实现的双向数据绑定，那为啥要对象绑定修改的时候 有时候没有改变值</strong></p>
+<ul>
+<li>Vue 不能检测数组和对象的变化。比如我们对data中的对象属性和数组属性进行一些修改时，无法响应式更新渲染到页面，因此vue提供了<code>$set</code>这个API来解决这个限制。</li>
+</ul>
+<p><strong>45、数组转逗号分隔的方法</strong></p>
+<ul>
+<li>使用 join() 方法， 传参为  ‘,’</li>
+<li>使用 toString() 方法</li>
+</ul>
+<p><strong>46、字符串转数组的方法</strong> </p>
+<ul>
+<li>split()  参数为要以什么字符分隔字符串</li>
+</ul>
+<p><strong>47、路由拦截，全局守卫你怎么做得</strong> </p>
+<p>​    vue-router路由钩子函数</p>
+<ul>
+<li>beforeEach</li>
+<li>beforeRouteEnter</li>
+<li>beforeRouteLeave</li>
+</ul>
+<p><strong>48、怎么在组件中监听路由参数的变化？</strong></p>
+<ul>
+<li>watch：’$route’</li>
+</ul>
+<p><strong>49、Vue 中 solt 的使用方式，以及 solt 作用域插槽的用法</strong></p>
+<ul>
+<li>定义在template模板中，当作插槽来让 html 中的标签插入，有具名插槽和作用域插槽</li>
+<li>作用域插槽用来对模板进行二次加工， 在html 通过<strong>v-solt</strong>绑定自定义属性来获取模板中的属性，通过属性来对特定需求的标签进行加工</li>
+</ul>
+<p><strong>50、Vuex 的 5 个核心属性是什么?</strong></p>
+<ul>
+<li><p>state =&gt; 基本数据</p>
+</li>
+<li><p>getters =&gt; 从基本数据(state)派生的数据，相当于state的计算属性</p>
+</li>
+<li><p>mutations =&gt; 提交更改数据的方法，同步！</p>
+</li>
+<li><p>actions =&gt; 像一个装饰器，包裹mutations，使之可以异步。</p>
+</li>
+<li><p>modules =&gt; 模块化Vuex</p>
+</li>
+<li><p>简述vuex数据传递过程</p>
+<p>​    页面通过mapAction异步提交事件到action。action通过commit把对应参数同步提交到mutation，mutation会修改state中对应的值。    最后通过getter把对应值跑出去，在页面的计算属性中，通过，mapGetter来动态获取state中的值</p>
+</li>
+<li><p>VueX用过吗</p>
+<p>​    用过 比如购物车页面小图标展示，或者数据存储</p>
+<p>​    场景：多个组件共享数据或者是跨组件传递数据时</p>
+</li>
+</ul>
+<p><strong>51、Vue 的路由实现模式：hash 模式和 history 模式</strong></p>
+<ul>
+<li>hash 模式的url 永远带着 # 号，在开发中默认使用这个模式，</li>
+<li>如果用户考虑url的规范的话就要使用 history模式，因为这个模式没有#号，适合做推广宣传。</li>
+<li>功能也有区别， 比如在开发app的时候有分享页面，这个分享出去的页面就是用vue或者 react做的，把这个页面分享到第三方app里，有的app是不允许出现#号的，那么就要使用history模式去掉#号</li>
+<li>但是使用history时在访问二级页面时，做刷新操作会出现 404 错误，这时候需要和后端人员配合让他配置以下 apache 或者 nginx 的url重定向就可以了</li>
+</ul>
+<p><strong>52、前端性能优化方式有哪些</strong></p>
+<ul>
+<li>页面<ul>
+<li>减少 http 请求， 使用精灵图，可以的话尽量将外部的脚本，样式进行合并，多个合为一个。并且css，js，image都可以进行压缩，</li>
+<li>能用css代替效果，尽量少用图片</li>
+<li>图片懒加载</li>
+<li>减少DNS查询</li>
+<li>将外部脚本置底</li>
+<li>合理设置 http 缓存</li>
+</ul>
+</li>
+<li>代码<ul>
+<li>减少 dom 操作</li>
+<li>慎用 with，相当于增加了作用域链的长度，过长的作用域链会导致性能下贱</li>
+<li>减少作用域链查找</li>
+<li>css 使用link 不使用@import，link在页面加载时，css 同时被加载</li>
+<li>设置className 不直接使用css表达式</li>
+</ul>
+</li>
+</ul>
+<p><strong>53、style 上加 scoped 属性的原理吗？</strong></p>
+<ul>
+<li>首先，它的功能是实现组建的私有化，不对全局造成样式污染</li>
+<li>原理： 在DOM结构以及css样式上加上唯一标记，保证唯一，达到样式私有化</li>
+<li>想要修改组件样式，有时需要把 scoped 去掉</li>
+</ul>
+<p><strong>54、Vue 常用的指令都有哪些？并且说明其作用</strong></p>
+<ul>
+<li>v-model  实现数据双向绑定</li>
+<li>v-bind  操作元素属性</li>
+<li>v-on 实现事件绑定</li>
+<li>v-if  判断这个标签是否渲染</li>
+<li>v-for 根据数据对标签进行循环渲染</li>
+<li>v-show  判断这个标签是否显示</li>
+<li>v-cloak  解决插值表达式闪动</li>
+<li>v-once  只编译一次，显示内容后不在进行响应式</li>
+<li>v-text  填充文本 相比插值表达式更加简介</li>
+<li>v-html 填充HTML片段  存在安全问题,本网站内部数据可以使用,来自第三方的数据不可以用</li>
+</ul>
+<p><strong>55、Vue 常用的修饰符都有哪些？</strong></p>
+<ul>
+<li>事件修饰符<ul>
+<li>enter 回车 delete 删除</li>
+<li>stop 阻止冒泡   prevent  阻止默认行为</li>
+<li>self 事件从侦听器绑定的元素本身触发时才出发回调</li>
+<li>once 只触发一次回调</li>
+</ul>
+</li>
+<li>表单<ul>
+<li>number  进行数字类型转换</li>
+<li>lazy  将input事件转换为change事件</li>
+<li>trim  进行对表单的两边空白去除</li>
+</ul>
+</li>
+</ul>
+<p><strong>56、如果一个页面中，点击按钮还是跳转本页面，但是数据是发生改变得要怎么处理</strong></p>
+<p>当前页面监听路由变化，watch:’$route’</p>
+<p><strong>57、为什么vue中 data数据是要return出来？</strong></p>
+<ul>
+<li>是每个组件实例都有自己的作用域，避免造成变量污染</li>
+<li>data是一个函数，函数相当于一个闭包，要想使用函数内部数据，就需要return出来</li>
+</ul>
+<p><strong>58 浏览器渲染得整个过程</strong></p>
+<p>​        解析HTML构建DOM(DOM树)，并行请求 css/image/js</p>
+<p>​        css文件下载完成，开始构建 cssom(css 树)</p>
+<p>​        CSSOM 构建结束后， 和Dom 一起生成Render Tree(渲染树)</p>
+<p><strong>59 var arr = [1,[2,[3,[4]]]] 怎么输出 [1,2,3,4]</strong></p>
+<p>​        arr.toString().split(‘,’).map(Number)</p>
+<p><strong>60 promise参数 方法 及怎么实现串行请求</strong></p>
+<p>​    async await / all</p>
+<p><strong>61js 事件循环机制 event loop</strong></p>
+<p>​        主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为 event loop</p>
+<p><strong>62 深拷贝 浅拷贝</strong></p>
+<p>​    首先深复制和浅复制只针对像 Object, Array 这样的复杂对象的。简单来说，浅复制只复制一层对象的属性，而深复制则递归复制了所    有层级。</p>
+<p>​    浅拷贝 拷贝 栈</p>
+<p>​    深拷贝 拷贝 堆</p>
+<p><strong>63 什么是闭包，优缺点，使用场景</strong></p>
+<p>​     简单来说 一个函数就是一个闭包， </p>
+<p>​    使用场景 ：vue 页面中 data() {}</p>
+<p>​    优点：避免全局污染，缺点: 造成内存泄漏</p>
+<p><strong>64 document.write 和 innerHtml区别</strong></p>
+<p>​    document.write 是直接写入到页面的内容流， 每次写完关闭之后会重新调用该函数，会导致页面被重写</p>
+<p>​    innerHTML 将页面写入某个DOM节点，不会导致页面全部重绘 </p>
+<p><strong>65 let var const 区别</strong></p>
+<p>​    var  声明变量可以重复声明，而let 不可以重复声明</p>
+<p>​     var 是不受限于块级的， 而let 是受限于块级</p>
+<p>​    const 声明之后必须赋值，否则会报错</p>
+<p><strong>66  $router 和 $route 的区别</strong></p>
+<p>​    route 是路由信息对象，包括path、params、hash 、query、fullPath、matched、name等路由信息对象</p>
+<p>​    router 为VueRouter 的实例。相当于一个全局的路由对象</p>
+<p><strong>67 路由传参的方式及路由跳转的方式</strong></p>
+<p>​    传参方式 ： query (页面刷新会保留) 、params(页面刷新不会保留)</p>
+<p>​    跳转方式： back、push、go、replace、 router-link (声明式)</p>
+<p><strong>68 vue key值作用</strong></p>
+<p>​    唯一值，更好的渲染 Dom</p>
+<p><strong>69  为什么避免 v-if 和 v-for 同时使用，v-if 和 v-for优先级</strong></p>
+<p>​    v-for的优先级 比 v-if 高 </p>
+<p>​    通过 v-if 移动到容器元素，不会再重复遍历列表的每个值，取而代之的是，我们检查它一次，且不会在v-if为否的时候运算 v-for</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Ananiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ananiu.xyz/posts/mianshi.html/">https://ananiu.xyz/posts/mianshi.html/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ananiu.xyz" target="_blank">Ananiu's BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/elementuiForm.html/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/12/10/vlHwtp9IZ4Ry5Gu.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">element ui  form表单校验</div></div></a></div><div class="next-post pull-right"><a href="/posts/elementuizzbd.html/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/12/10/Og5xtPEIwQW89Rj.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">element ui 使用正则表达式进行校验 表单数据</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/elementuizzbd.html/" title="element ui 使用正则表达式进行校验 表单数据"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/Og5xtPEIwQW89Rj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-19</div><div class="title">element ui 使用正则表达式进行校验 表单数据</div></div></a></div><div><a href="/posts/elementuiForm.html/" title="element ui  form表单校验"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/vlHwtp9IZ4Ry5Gu.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-24</div><div class="title">element ui  form表单校验</div></div></a></div><div><a href="/posts/flex.html/" title="flex 布局"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/q5t8PKT61vU3pXo.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-05</div><div class="title">flex 布局</div></div></a></div><div><a href="/posts/Ajax.html/" title="Ajax"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/HdV7SIDezXy1a4w.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-12</div><div class="title">Ajax</div></div></a></div><div><a href="/posts/jquery.html/" title="jQuery 总结"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/PxUtYv75oglSq8D.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-18</div><div class="title">jQuery 总结</div></div></a></div><div><a href="/posts/jsgaoji.html/" title="js高级"><img class="cover" data-lazy-src="https://i.loli.net/2020/12/10/kLtdEV2fZTJCA3N.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-05</div><div class="title">js高级</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://avatars.githubusercontent.com/u/80749242?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Ananiu</div><div class="author-info__description">一个收藏回忆与分享技术的地方</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" href="/"><i class="fa fa-bookmark"></i><span>点我~~</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=5712974" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/ananius" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/elementuiForm.html/" title="element ui  form表单校验"><img data-lazy-src="https://i.loli.net/2020/12/10/vlHwtp9IZ4Ry5Gu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="element ui  form表单校验"/></a><div class="content"><a class="title" href="/posts/elementuiForm.html/" title="element ui  form表单校验">element ui  form表单校验</a><time datetime="2021-05-23T16:00:00.000Z" title="发表于 2021-05-24 00:00:00">2021-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/mianshi.html/" title="面试汇总"><img data-lazy-src="https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试汇总"/></a><div class="content"><a class="title" href="/posts/mianshi.html/" title="面试汇总">面试汇总</a><time datetime="2021-05-23T16:00:00.000Z" title="发表于 2021-05-24 00:00:00">2021-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/elementuizzbd.html/" title="element ui 使用正则表达式进行校验 表单数据"><img data-lazy-src="https://i.loli.net/2020/12/10/Og5xtPEIwQW89Rj.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="element ui 使用正则表达式进行校验 表单数据"/></a><div class="content"><a class="title" href="/posts/elementuizzbd.html/" title="element ui 使用正则表达式进行校验 表单数据">element ui 使用正则表达式进行校验 表单数据</a><time datetime="2021-05-19T07:42:00.000Z" title="发表于 2021-05-19 15:42:00">2021-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/vue.html/" title="Vue"><img data-lazy-src="https://i.loli.net/2020/12/10/iyFnN6gbrXtHz4G.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"/></a><div class="content"><a class="title" href="/posts/vue.html/" title="Vue">Vue</a><time datetime="2021-05-12T09:57:50.000Z" title="发表于 2021-05-12 17:57:50">2021-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/flex.html/" title="flex 布局"><img data-lazy-src="https://i.loli.net/2020/12/10/q5t8PKT61vU3pXo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flex 布局"/></a><div class="content"><a class="title" href="/posts/flex.html/" title="flex 布局">flex 布局</a><time datetime="2021-05-05T04:57:50.000Z" title="发表于 2021-05-05 12:57:50">2021-05-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/12/10/XmRnEoWUwkYHugS.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Ananiu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'env-6gxxlajh1c9565f9',
+      region: 'ap-shanghai'
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'env-6gxxlajh1c9565f9',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/gh/xiaopengand/blogCdn@latest/fishes.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div><!-- hexo injector body_end start --><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script><!-- hexo injector body_end end --></body></html>
